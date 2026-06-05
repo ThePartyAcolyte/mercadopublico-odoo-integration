@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mercadopublico_categoria_tree" model="ir.ui.view">
+        <field name="name">mercadopublico.categoria.list</field>
+        <field name="model">mercadopublico.categoria</field>
+        <field name="arch" type="xml">
+            <list string="Categorías UNSPSC">
+                <field name="codigo"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mercadopublico_categoria_form" model="ir.ui.view">
+        <field name="name">mercadopublico.categoria.form</field>
+        <field name="model">mercadopublico.categoria</field>
+        <field name="arch" type="xml">
+            <form string="Categoría UNSPSC">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="codigo" placeholder="Código (ej: 43210000)"/>
+                        </h1>
+                        <h2>
+                            <field name="name" placeholder="Nombre de Categoría"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="parent_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Subcategorías">
+                            <field name="child_ids">
+                                <list>
+                                    <field name="codigo"/>
+                                    <field name="name"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mercadopublico_categoria_search" model="ir.ui.view">
+        <field name="name">mercadopublico.categoria.search</field>
+        <field name="model">mercadopublico.categoria</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Categorías">
+                <field name="codigo"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+            </search>
+        </field>
+    </record>
+</odoo>

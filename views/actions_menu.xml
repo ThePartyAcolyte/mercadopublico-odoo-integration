@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ESTRUCTURA DE MENÚS -->
+
+    <!-- Menú Raíz -->
+    <menuitem id="menu_mercadopublico_root" 
+              name="Mercado Público" 
+              action="action_mercadopublico_dashboard_router" 
+              web_icon="MercadoPublico-Odoo,static/description/icon.png"
+              sequence="40">
+              
+        <!-- Menú Dashboard -->
+        <menuitem id="menu_mercadopublico_dashboard"
+                  name="Dashboard"
+                  action="action_mercadopublico_dashboard_router"
+                  sequence="5"/>
+
+        <!-- Menú de Licitaciones -->
+        <menuitem id="menu_mercadopublico_licitaciones"
+                  name="Licitaciones"
+                  action="action_mercadopublico_licitacion"
+                  sequence="10"/>
+                  
+        <!-- Menú de Oportunidades -->
+        <menuitem id="menu_mercadopublico_oportunidades" 
+                  name="Oportunidades" 
+                  action="action_crm_lead_mercadopublico" 
+                  sequence="15"/>
+        
+        <!-- Submenús bajo "Configuración" -->
+        <menuitem id="menu_mercadopublico_configuration" 
+                  name="Configuración"
+                  sequence="30">
+                  
+            <!-- Configuración General (Ajustes de la App) -->
+            <menuitem id="menu_mercadopublico_config_general" 
+                      name="Ajustes"
+                      action="action_mercadopublico_config_settings"
+                      sequence="10"/>
+
+            <!-- Criterios de Búsqueda -->
+            <menuitem id="menu_mercadopublico_busqueda"
+                      name="Filtros de Búsqueda"
+                      action="action_mercadopublico_busqueda"
+                      sequence="15"/>
+
+            <!-- Licitaciones -->
+            <menuitem id="menu_mercadopublico_config_licitaciones"
+                      name="Licitaciones"
+                      sequence="20">
+                <menuitem id="menu_mercadopublico_etapas"
+                          name="Etapas de Licitaciones"
+                          action="action_mercadopublico_etapa"
+                          sequence="10"/>
+            </menuitem>
+
+            <!-- Categorías UNSPSC -->
+            <menuitem id="menu_mercadopublico_categorias"
+                      name="Categorías UNSPSC"
+                      action="action_mercadopublico_categoria"
+                      sequence="30"/>
+
+            <!-- Organismos -->
+            <menuitem id="menu_mercadopublico_organismos"
+                      name="Organismos"
+                      action="action_mercadopublico_organismo"
+                      sequence="40"/>
+        </menuitem>
+    </menuitem>
+</odoo>

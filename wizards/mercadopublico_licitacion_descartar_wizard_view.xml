@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mercadopublico_licitacion_descartar_wizard_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.licitacion.descartar.wizard.form</field>
+        <field name="model">mercadopublico.licitacion.descartar.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Feedback de Licitación">
+                <sheet>
+                    <group invisible="1">
+                        <field name="licitacion_id" invisible="1"/>
+                        <field name="tipo_accion" invisible="1"/>
+                    </group>
+                    
+                    <group string="Motivo de Descarte" invisible="tipo_accion != 'no_apta'">
+                        <field name="motivo_tipo" required="tipo_accion == 'no_apta'"/>
+                        <field name="comentario_adicional" placeholder="Ej: No tenemos la boleta de garantía requerida..."/>
+                    </group>
+
+                    <group string="Marcar como Apta" invisible="tipo_accion != 'apta'">
+                        <p class="text-success mb-3">
+                            <i class="fa fa-check-circle mr-1"/>
+                            La licitación se marcará como <b>Apta</b> y se moverá a la etapa de <b>En Espera</b>.
+                        </p>
+                        <div class="alert alert-info" role="alert">
+                            <h4 class="alert-heading"><i class="fa fa-lightbulb-o mr-1"/> Recomendación</h4>
+                            <p>Para mejorar la inteligencia de búsqueda, te sugerimos agregar a tus filtros las siguientes categorías presentes en esta licitación/compra:</p>
+                        </div>
+                    </group>
+
+                    <group string="Añadir Categorías a mis Filtros" invisible="tipo_accion != 'apta' or not categoria_line_ids">
+                        <field name="categoria_line_ids" nolabel="1">
+                            <list editable="bottom" create="false" delete="false">
+                                <field name="seleccionar" widget="boolean_toggle"/>
+                                <field name="categoria_id" readonly="1" options="{'no_open': True}"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_confirmar" string="Confirmar" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mercadopublico_licitacion_feedback_wizard" model="ir.actions.act_window">
+        <field name="name">Feedback de Licitación</field>
+        <field name="res_model">mercadopublico.licitacion.descartar.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

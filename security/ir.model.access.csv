@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mercadopublico_dashboard_system,mercadopublico.dashboard,model_mercadopublico_dashboard,base.group_system,1,1,1,1
+access_mercadopublico_dashboard_user,mercadopublico.dashboard,model_mercadopublico_dashboard,base.group_user,1,1,1,1
+access_mercadopublico_filtro,mercadopublico.filtro,model_mercadopublico_filtro,base.group_user,1,1,1,1
+access_mercadopublico_licitacion,mercadopublico.licitacion,model_mercadopublico_licitacion,base.group_user,1,1,1,1
+access_mercadopublico_licitacion_item,mercadopublico.licitacion.item,model_mercadopublico_licitacion_item,base.group_user,1,1,1,1
+access_mercadopublico_organismo,mercadopublico.organismo,model_mercadopublico_organismo,base.group_user,1,1,1,1
+access_mercadopublico_etapa,mercadopublico.etapa,model_mercadopublico_etapa,base.group_user,1,1,1,1
+access_mercadopublico_api,mercadopublico.api,model_mercadopublico_api,base.group_user,1,1,1,1
+access_mercadopublico_limpiar_wizard,mercadopublico.limpiar.wizard,model_mercadopublico_limpiar_wizard,base.group_user,1,1,1,1
+access_mercadopublico_categoria,mercadopublico.categoria,model_mercadopublico_categoria,base.group_user,1,1,1,1
+access_mercadopublico_onboarding_wizard,mercadopublico.onboarding.wizard,model_mercadopublico_onboarding_wizard,base.group_user,1,1,1,1
+access_mercadopublico_descartar_wizard,mercadopublico.licitacion.descartar.wizard,model_mercadopublico_licitacion_descartar_wizard,base.group_user,1,1,1,1
+access_mercadopublico_ubicacion,mercadopublico.ubicacion,model_mercadopublico_ubicacion,base.group_user,1,1,1,1
+access_mercadopublico_descartar_categoria,mercadopublico.licitacion.descartar.categoria,model_mercadopublico_licitacion_descartar_categoria,base.group_user,1,1,1,1
+access_mercadopublico_categoria_wizard,mercadopublico.categoria.wizard,model_mercadopublico_categoria_wizard,base.group_user,1,1,1,1

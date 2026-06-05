@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista de lista -->
+    <record id="mercadopublico_licitacion_view_list" model="ir.ui.view">
+        <field name="name">mercadopublico.licitacion.list</field>
+        <field name="model">mercadopublico.licitacion</field>
+        <field name="arch" type="xml">
+            <list string="Procesos" decoration-muted="decision_filtro == 'no_apta'" decoration-success="decision_filtro == 'apta'">
+                <field name="codigo" string="Código" />
+                <field name="name" string="Nombre" />
+                <field name="rating" widget="priority" optional="show"/>
+                <field name="tipo_proceso" string="Tipo" />
+                <field name="comprador_nombre" string="Organismo" />
+                <field name="fecha_cierre" />
+                <field name="monto_estimado" widget="monetary" />
+                <field name="state" widget="badge"
+                       decoration-info="state == 'nuevo'" 
+                       decoration-warning="state == 'analizando'" 
+                       decoration-success="state == 'analizado'"/>
+                <field name="decision_filtro" widget="badge" 
+                       decoration-success="decision_filtro == 'apta'" 
+                       decoration-danger="decision_filtro == 'no_apta'" 
+                       decoration-muted="decision_filtro == 'pendiente'"/>
+                <field name="etapa_id" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record id="mercadopublico_licitacion_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.licitacion.form</field>
+        <field name="model">mercadopublico.licitacion</field>
+        <field name="arch" type="xml">
+            <form string="Proceso Mercado Público">
+                <header>
+                    <button name="action_convertir_oportunidad" 
+                            string="Convertir a Oportunidad" 
+                            type="object" 
+                            class="oe_highlight"
+                            invisible="opportunity_id or decision_filtro == 'no_apta'"/>
+                    <button name="action_descartar" 
+                            string="Descartar" 
+                            type="object"
+                            invisible="opportunity_id or decision_filtro == 'no_apta'"/>
+                    <button name="action_marcar_apta" 
+                            string="Es Apta" 
+                            type="object"
+                            class="btn-success"
+                            invisible="opportunity_id or decision_filtro == 'apta'"/>
+                    <button name="action_abrir_mercadopublico" 
+                            string="Ver en Mercado Público" 
+                            type="object" 
+                            icon="fa-external-link"/>
+                    <field name="etapa_id" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="float-end">
+                        <field name="rating" widget="priority"/>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        <h3><field name="codigo" readonly="1"/></h3>
+                    </div>
+                    
+                    <group>
+                        <group string="Comprador">
+                            <field name="comprador_nombre" invisible="1"/>
+                            <label for="organismo_id" string="Organismo"/>
+                            <div class="o_row">
+                                <field name="organismo_id" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="organismo_favorito" widget="boolean_favorite" nolabel="1"/>
+                            </div>
+                            <field name="comprador_region" readonly="1"/>
+                            <field name="comprador_comuna" readonly="1"/>
+                            <field name="fecha_cierre" readonly="1"/>
+                            <field name="monto_estimado" widget="monetary" readonly="1"/>
+                            <field name="tipo_licitacion" invisible="tipo_proceso != 'licitacion'" readonly="1"/>
+                        </group>
+                        <group string="Análisis">
+                            <field name="state" readonly="1"/>
+                            <field name="decision_filtro" widget="radio" options="{'horizontal': true}"/>
+                            <field name="tipo_proceso" readonly="1"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Detalles">
+                            <field name="descripcion" widget="html" readonly="1"/>
+                        </page>
+                        <page string="Productos/Ítems">
+                            <field name="item_ids">
+                                <list string="Ítems" create="false" delete="false" edit="false" decoration-success="is_match == True">
+                                    <field name="is_match" column_invisible="True"/>
+                                    <field name="codigo_producto" optional="show"/>
+                                    <field name="codigo_categoria" optional="show"/>
+                                    <field name="name"/>
+                                    <field name="descripcion" optional="show"/>
+                                    <field name="cantidad"/>
+                                    <field name="unidad_medida"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Clasificación">
+                            <group>
+                                <field name="categoria_ids" widget="many2many_tags"/>
+                                <field name="palabras_clave_encontradas" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Seguimiento">
+                            <group>
+                                <field name="opportunity_id" readonly="1"/>
+                                <field name="motivo_descarte"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de búsqueda -->
+    <record id="mercadopublico_licitacion_view_search" model="ir.ui.view">
+        <field name="name">mercadopublico.licitacion.search</field>
+        <field name="model">mercadopublico.licitacion</field>
+        <field name="arch" type="xml">
+            <search string="Procesos">
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('descripcion', 'ilike', self)]"/>
+                <field name="codigo"/>
+                <field name="comprador_nombre"/>
+                
+                <separator/>
+                <filter string="Aptas" name="apta" domain="[('decision_filtro', '=', 'apta')]"/>
+                <filter string="Pendientes" name="pendiente" domain="[('decision_filtro', '=', 'pendiente')]"/>
+                <filter string="No Aptas" name="no_apta" domain="[('decision_filtro', '=', 'no_apta')]"/>
+                
+                <separator/>
+                <filter string="Nuevas (Sin Analizar)" name="nuevo" domain="[('state', '=', 'nuevo')]"/>
+                
+                <group expand="0" string="Agrupar por">
+                    <filter string="Etapa" name="group_etapa" context="{'group_by': 'etapa_id'}"/>
+                    <filter string="Estado Filtro" name="group_decision" context="{'group_by': 'decision_filtro'}"/>
+                    <filter string="Organismo" name="group_comprador" context="{'group_by': 'comprador_nombre'}"/>
+                    <filter string="Tipo Proceso" name="group_tipo" context="{'group_by': 'tipo_proceso'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Vista Kanban -->
+    <record id="mercadopublico_licitacion_view_kanban" model="ir.ui.view">
+        <field name="name">mercadopublico.licitacion.kanban</field>
+        <field name="model">mercadopublico.licitacion</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="etapa_id" drag_drop="true" quick_create="false">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="codigo"/>
+                <field name="tipo_proceso"/>
+                <field name="monto_estimado"/>
+                <field name="opportunity_id"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div>
+                                    <strong><field name="codigo"/></strong>
+                                    <span class="float-right badge badge-info"><field name="tipo_proceso"/></span>
+                                </div>
+                                <div class="mt-1">
+                                    <field name="rating" widget="priority"/>
+                                </div>
+                                <div class="mt-2">
+                                    <field name="name"/>
+                                </div>
+                                <div class="mt-2 text-muted">
+                                    <field name="comprador_nombre"/>
+                                </div>
+                                <div class="mt-2">
+                                    <field name="monto_estimado" widget="monetary"/>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-end">
+                                    <button t-if="!record.opportunity_id.raw_value" name="action_convertir_oportunidad" type="object" class="btn btn-sm btn-primary">
+                                        Convertir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

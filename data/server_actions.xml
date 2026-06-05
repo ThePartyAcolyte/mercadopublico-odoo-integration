@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Acción servidor para importar y analizar manualmente -->
+    <record id="action_mercadopublico_sincronizar_analizar" model="ir.actions.server">
+        <field name="name">Sincronizar y Analizar</field>
+        <field name="model_id" ref="model_mercadopublico_api"/>
+        <field name="state">code</field>
+        <field name="code">
+# Ejecutar importación inmediata
+model.importar_licitaciones()
+# Ejecutar análisis
+model.analizar_pendientes()
+action = {
+    'type': 'ir.actions.client',
+    'tag': 'display_notification',
+    'params': {
+        'title': 'Proceso completado',
+        'message': 'Se han importado y analizado las licitaciones recientes.',
+        'type': 'success',
+        'sticky': False,
+        'next': {'type': 'ir.actions.client', 'tag': 'reload'}
+    }
+}
+        </field>
+    </record>
+
+    <!-- Acción servidor para sincronizar organismos -->
+    <record id="action_sincronizar_organismos" model="ir.actions.server">
+        <field name="name">Sincronizar Organismos</field>
+        <field name="model_id" ref="model_mercadopublico_api"/>
+        <field name="state">code</field>
+        <field name="code">
+model.sincronizar_organismos()
+        </field>
+    </record>
+</odoo>

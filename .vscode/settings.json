@@ -1,0 +1,31 @@
+{
+    "python.defaultInterpreterPath": "/home/butch/odoo-dev/odoo18/venv/bin/python",
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.extraPaths": [
+        "/home/butch/odoo-dev/odoo18",
+        "/home/butch/odoo-dev/odoo18/odoo",
+        "/home/butch/odoo-dev/odoo18/odoo/addons",
+        "/home/butch/odoo-dev/addons/odoo18",
+        "/home/butch/odoo-dev/addons/odoo18/mercadopublico-odoo-integration"
+    ],
+    "python.autoComplete.extraPaths": [
+        "/home/butch/odoo-dev/odoo18",
+        "/home/butch/odoo-dev/odoo18/odoo",
+        "/home/butch/odoo-dev/odoo18/odoo/addons",
+        "/home/butch/odoo-dev/addons/odoo18",
+        "/home/butch/odoo-dev/addons/odoo18/mercadopublico-odoo-integration"
+    ],
+    "odoo.serverPath": "/home/butch/odoo-dev/odoo18",
+    "odoo.addonsPath": [
+        "/home/butch/odoo-dev/odoo18/odoo/addons",
+        "/home/butch/odoo-dev/addons/odoo18"
+    ],
+    "odoo.pythonInterpreter": "/home/butch/odoo-dev/odoo18/venv/bin/python",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "none",
+    "files.associations": {
+        "*.xml": "xml"
+    }
+}
