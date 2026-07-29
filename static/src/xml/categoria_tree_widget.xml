@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    
+    <t t-name="MercadoPublico.CategoryCheckbox" owl="1">
+        <input type="checkbox" t-ref="input" class="form-check-input mt-0 me-2" 
+               t-att-id="props.id" 
+               t-on-change="props.onChange"/>
+    </t>
+
+    <t t-name="MercadoPublico.CategoriaTreeWidget" owl="1">
+        <div class="o_categoria_tree_widget">
+            <div class="o_categoria_search mb-3">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-search"/></span>
+                    <input type="text" class="form-control" placeholder="Buscar por código o nombre..." t-on-input="onSearchInput" t-att-value="state.searchQuery"/>
+                </div>
+            </div>
+            
+            <div class="o_categoria_tree_container border rounded p-2" style="max-height: 400px; overflow-y: auto;">
+                <t t-if="state.tree.length === 0">
+                    <div class="text-center text-muted p-4">Cargando categorías...</div>
+                </t>
+                <t t-else="">
+                    <t t-call="MercadoPublico.CategoriaTreeNode">
+                        <t t-set="nodes" t-value="state.tree"/>
+                        <t t-set="level" t-value="0"/>
+                    </t>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="MercadoPublico.CategoriaTreeNode" owl="1">
+        <ul class="o_categoria_tree_list" t-att-style="level > 0 ? 'padding-left: 20px; list-style: none;' : 'padding-left: 0; list-style: none; margin-bottom: 0;'">
+            <t t-foreach="nodes" t-as="node" t-key="node.id">
+                <li class="o_categoria_tree_item my-1" t-if="node.visible">
+                    <div class="d-flex align-items-center">
+                        <!-- Expand/Collapse toggle -->
+                        <span class="o_categoria_tree_toggle me-2" style="width: 16px; cursor: pointer;" t-on-click="() => this.toggleExpand(node.id)">
+                            <t t-if="node.children.length > 0">
+                                <i t-attf-class="fa fa-caret-{{ state.expandedNodes[node.id] ? 'down' : 'right' }} text-muted"/>
+                            </t>
+                            <t t-else="">
+                                <span style="display: inline-block; width: 14px;"></span>
+                            </t>
+                        </span>
+                        
+                        <!-- Checkbox -->
+                        <div class="form-check mb-0 d-flex align-items-center">
+                            <t t-set="checkboxState" t-value="getCheckboxState(node)"/>
+                            <CategoryCheckbox 
+                                id="'cat_' + node.id" 
+                                checked="checkboxState.checked" 
+                                indeterminate="checkboxState.indeterminate"
+                                onChange="(ev) => this.toggleSelection(node, ev)"/>
+                            <label class="form-check-label" t-att-for="'cat_' + node.id" style="cursor: pointer;">
+                                <span class="badge border me-1"><t t-esc="node.codigo"/></span>
+                                <t t-esc="node.name"/>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Recursive children -->
+                    <t t-if="node.children.length > 0 and state.expandedNodes[node.id]">
+                        <t t-call="MercadoPublico.CategoriaTreeNode">
+                            <t t-set="nodes" t-value="node.children"/>
+                            <t t-set="level" t-value="level + 1"/>
+                        </t>
+                    </t>
+                </li>
+            </t>
+        </ul>
+    </t>
+
+</templates>

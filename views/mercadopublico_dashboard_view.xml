@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- VISTA DASHBOARD -->
+    <record id="mercadopublico_dashboard_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.dashboard.form</field>
+        <field name="model">mercadopublico.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Mercado Público Dashboard" create="false" delete="false" class="o_mercadopublico_dashboard">
+                <sheet>
+                    <!-- Fila 1: KPIs Principales -->
+                    <div class="row mt-4 d-flex align-items-stretch">
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-center p-3 shadow-sm h-100 border-top border-primary border-4 d-flex flex-column justify-content-center">
+                                <h2 class="m-0 text-primary">
+                                    <field name="kpi_licitaciones_hoy" />
+                                </h2>
+                                <h5 class="text-muted mt-2 mb-3">Licitaciones Hoy</h5>
+                                <div class="w-100 mt-auto">
+                                    <field name="kpi_licitaciones_progreso" widget="progressbar" nolabel="1" class="w-100"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-center p-3 shadow-sm h-100 border-top border-info border-4 d-flex flex-column justify-content-center">
+                                <h2 class="m-0 text-info">
+                                    <field name="kpi_compras_agiles_hoy" />
+                                </h2>
+                                <h5 class="text-muted mt-2 mb-3">Compras Ágiles Hoy</h5>
+                                <div class="w-100 mt-auto">
+                                    <field name="kpi_compras_agiles_progreso" widget="progressbar" nolabel="1" class="w-100"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-center p-3 shadow-sm h-100 border-top border-success border-4 d-flex flex-column justify-content-center">
+                                <h2 class="m-0 text-success">
+                                    <field name="kpi_aptas_pendientes" />
+                                </h2>
+                                <h5 class="text-muted mt-2 mb-0">Aptas por Revisar</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card text-center p-3 shadow-sm h-100 border-top border-warning border-4 d-flex flex-column justify-content-center">
+                                <h2 class="m-0 text-warning">
+                                    <field name="kpi_monto_total_aptas" widget="monetary" options="{'currency_field': 'currency_id', 'no_decimal': True}" />
+                                </h2>
+                                <h5 class="text-muted mt-2 mb-0">Monto Total Aptas</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fila 2: Tasas y Estados -->
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <div class="card p-3 shadow-sm border-0">
+                                <h5>Efectividad del Motor de Búsqueda</h5>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-6 border-end">
+                                        <p class="text-muted mb-1">Tasa de Relevancia</p>
+                                        <h4 class="text-primary">
+                                            <field name="kpi_tasa_aceptacion" widget="percentage" digits="[16,1]" />
+                                        </h4>
+                                        <small class="text-muted">(Aptas / Analizadas)</small>
+                                    </div>
+                                    <div class="col-6 ps-3">
+                                        <p class="text-muted mb-1">Conversión a Oportunidad</p>
+                                        <h4 class="text-success">
+                                            <field name="kpi_conversion_crm" widget="percentage" digits="[16,1]" />
+                                        </h4>
+                                        <small class="text-muted">(Convertidas / Aptas)</small>
+                                    </div>
+                                </div>
+                                <hr class="mt-4 mb-3" />
+                                <h6>Registro Histórico</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="text-muted mb-1">Total Analizados</p>
+                                        <h5 class="text-secondary"><field name="kpi_historico_analizados" /></h5>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="text-muted mb-1">Total Aptos (Retenidos)</p>
+                                        <h5 class="text-secondary"><field name="kpi_historico_aptos" /></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card p-3 shadow-sm border-0">
+                                <h5>Herramientas</h5>
+                                <hr />
+                                <div class="d-flex flex-column gap-3 align-items-center mt-3">
+                                    <button name="%(action_mercadopublico_sync_and_analyze)d" string="Sincronizar y Analizar Ahora" type="action" class="btn btn-primary" icon="fa-cloud-download" />
+                                    <button name="%(action_mercadopublico_clear_wizard)d" string="Limpiar Base de Datos" type="action" class="btn btn-outline-danger" icon="fa-trash" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

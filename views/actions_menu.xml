@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================================================
+         APP STANDALONE
+         Solo visible para usuarios en modo "App Standalone".
+         Mutuamente excluyente con el modo CRM Integrado.
+    ============================================================ -->
+    <menuitem id="menu_mercadopublico_root"
+              name="Mercado Público"
+              action="action_mercadopublico_dashboard_router"
+              web_icon="mercadopublico_odoo_integration,static/description/icon.png"
+              sequence="40"
+              groups="mercadopublico_odoo_integration.group_mercadopublico_standalone">
+
+        <menuitem id="menu_mercadopublico_dashboard"
+                  name="Dashboard"
+                  action="action_mercadopublico_dashboard_router"
+                  sequence="5"/>
+
+        <menuitem id="menu_mercadopublico_tenderes"
+                  name="Licitaciones"
+                  action="action_mercadopublico_tender"
+                  sequence="10"/>
+
+        <menuitem id="menu_mercadopublico_oportunidades"
+                  name="Oportunidades"
+                  action="action_crm_lead_mercadopublico"
+                  sequence="15"/>
+
+        <menuitem id="menu_mercadopublico_configuration"
+                  name="Configuración"
+                  sequence="30">
+
+            <menuitem id="menu_mercadopublico_config_general"
+                      name="Ajustes"
+                      action="action_mercadopublico_config_settings"
+                      sequence="10"
+                      groups="mercadopublico_odoo_integration.group_mercadopublico_admin"/>
+
+            <menuitem id="menu_mercadopublico_busqueda"
+                      name="Filtros de Búsqueda"
+                      action="action_mercadopublico_busqueda"
+                      sequence="15"
+                      groups="mercadopublico_odoo_integration.group_mercadopublico_manager"/>
+
+            <menuitem id="menu_mercadopublico_config_licitaciones"
+                      name="Licitaciones"
+                      sequence="20"
+                      groups="mercadopublico_odoo_integration.group_mercadopublico_admin">
+                <menuitem id="menu_mercadopublico_stages"
+                          name="Etapas de Licitaciones"
+                          action="action_mercadopublico_stage"
+                          sequence="10"/>
+            </menuitem>
+
+            <menuitem id="menu_mercadopublico_categorys"
+                      name="Categorías UNSPSC"
+                      action="action_mercadopublico_category"
+                      sequence="30"
+                      groups="mercadopublico_odoo_integration.group_mercadopublico_manager"/>
+
+            <menuitem id="menu_mercadopublico_buyers"
+                      name="Organismos"
+                      action="action_mercadopublico_buyer"
+                      sequence="40"
+                      groups="mercadopublico_odoo_integration.group_mercadopublico_manager"/>
+        </menuitem>
+    </menuitem>
+
+    <!-- ============================================================
+         INTEGRACIÓN CRM
+         Solo visible para usuarios en modo "Integrado en CRM".
+         Mutuamente excluyente con el modo App Standalone.
+
+         Estructura:
+           CRM > Mercado Público > Dashboard / Licitaciones / Oportunidades
+           CRM > Configuration > Mercado Público > (config items)
+    ============================================================ -->
+
+    <!-- Menú principal MP bajo CRM: contenido operativo -->
+    <menuitem id="menu_crm_mercadopublico_root"
+              name="Mercado Público"
+              parent="crm.crm_menu_root"
+              sequence="20"
+              groups="mercadopublico_odoo_integration.group_mercadopublico_crm">
+
+        <menuitem id="menu_crm_mercadopublico_dashboard"
+                  name="Dashboard"
+                  action="action_mercadopublico_dashboard_router"
+                  sequence="5"/>
+
+        <menuitem id="menu_crm_mercadopublico_tenderes"
+                  name="Licitaciones"
+                  action="action_mercadopublico_tender"
+                  sequence="10"/>
+
+        <menuitem id="menu_crm_mercadopublico_oportunidades"
+                  name="Oportunidades"
+                  action="action_crm_lead_mercadopublico"
+                  sequence="15"/>
+    </menuitem>
+
+    <!-- Subsección de config MP dentro de CRM > Configuration -->
+    <!-- Sólo visible en modo "Integrado en CRM" — no aparece en modo standalone -->
+    <menuitem id="menu_crm_mercadopublico_config_section"
+              name="Mercado Público"
+              parent="crm.crm_menu_config"
+              sequence="50"
+              groups="mercadopublico_odoo_integration.group_mercadopublico_crm">
+
+        <menuitem id="menu_crm_mp_busqueda"
+                  name="Filtros de Búsqueda"
+                  action="action_mercadopublico_busqueda"
+                  sequence="10"
+                  groups="mercadopublico_odoo_integration.group_mercadopublico_manager"/>
+
+        <menuitem id="menu_crm_mp_organismos"
+                  name="Organismos"
+                  action="action_mercadopublico_buyer"
+                  sequence="20"
+                  groups="mercadopublico_odoo_integration.group_mercadopublico_manager"/>
+
+        <menuitem id="menu_crm_mp_categorias"
+                  name="Categorías UNSPSC"
+                  action="action_mercadopublico_category"
+                  sequence="25"
+                  groups="mercadopublico_odoo_integration.group_mercadopublico_manager"/>
+
+        <menuitem id="menu_crm_mp_etapas"
+                  name="Etapas de Licitaciones"
+                  action="action_mercadopublico_stage"
+                  sequence="28"
+                  groups="mercadopublico_odoo_integration.group_mercadopublico_admin"/>
+
+        <menuitem id="menu_crm_mp_ajustes"
+                  name="Ajustes"
+                  action="action_mercadopublico_config_settings"
+                  sequence="30"
+                  groups="mercadopublico_odoo_integration.group_mercadopublico_admin"/>
+    </menuitem>
+</odoo>

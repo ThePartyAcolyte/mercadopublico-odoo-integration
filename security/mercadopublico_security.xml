@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        ARQUITECTURA DE GRUPOS ODOO 19:
+        ir.module.category → res.groups.privilege → res.groups
+        
+        Los grupos ya NO tienen category_id. En su lugar tienen privilege_id.
+        El category_id vive en res.groups.privilege.
+    -->
+
+    <!-- Categoría raíz del módulo -->
+    <record id="module_category_mercadopublico" model="ir.module.category">
+        <field name="name">Mercado Público</field>
+        <field name="description">Gestión de licitaciones de Mercado Público</field>
+        <field name="sequence">15</field>
+    </record>
+
+    <!-- ================================================
+         PRIVILEGES (agrupadores dentro de la categoría)
+    ================================================ -->
+
+    <!-- Privilege 1: Nivel de acceso → radio Usuario / Gestor / Administrador -->
+    <record id="privilege_mercadopublico_nivel" model="res.groups.privilege">
+        <field name="name">Nivel de Acceso</field>
+        <field name="category_id" ref="module_category_mercadopublico"/>
+        <field name="placeholder">Sin acceso</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <!-- Privilege 2: Modo de visualización → radio excluyente Standalone / CRM -->
+    <record id="privilege_mercadopublico_modo" model="res.groups.privilege">
+        <field name="name">Modo de Visualización</field>
+        <field name="category_id" ref="module_category_mercadopublico"/>
+        <field name="placeholder">Sin modo asignado</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <!-- ================================================
+         JERARQUÍA DE PERMISOS (under privilege "Nivel de Acceso")
+    ================================================ -->
+
+    <!-- Nivel 1: Usuario — puede ver y convertir licitaciones -->
+    <record id="group_mercadopublico_user" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="privilege_id" ref="privilege_mercadopublico_nivel"/>
+        <field name="sequence">10</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Nivel 2: Gestor — gestiona filtros, organismos y categorías -->
+    <record id="group_mercadopublico_manager" model="res.groups">
+        <field name="name">Gestor</field>
+        <field name="privilege_id" ref="privilege_mercadopublico_nivel"/>
+        <field name="sequence">20</field>
+        <field name="implied_ids" eval="[(4, ref('group_mercadopublico_user'))]"/>
+    </record>
+
+    <!-- Nivel 3: Administrador — acceso a ajustes, API y cron -->
+    <record id="group_mercadopublico_admin" model="res.groups">
+        <field name="name">Administrador</field>
+        <field name="privilege_id" ref="privilege_mercadopublico_nivel"/>
+        <field name="sequence">30</field>
+        <field name="implied_ids" eval="[(4, ref('group_mercadopublico_manager'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <!-- Modo: App Standalone — accede por el home de Odoo -->
+    <record id="group_mercadopublico_standalone" model="res.groups">
+        <field name="name">App Standalone</field>
+        <field name="privilege_id" ref="privilege_mercadopublico_modo"/>
+        <field name="sequence">10</field>
+        <field name="user_ids" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <!-- Modo: Integrado en CRM — accede desde el módulo CRM -->
+    <record id="group_mercadopublico_crm" model="res.groups">
+        <field name="name">Integrado en CRM</field>
+        <field name="privilege_id" ref="privilege_mercadopublico_modo"/>
+        <field name="sequence">20</field>
+    </record>
+
+    <!-- ================================================
+         REGLAS DE REGISTRO
+    ================================================ -->
+
+    <!-- Multi-compañía para licitaciones -->
+    <record id="rule_mercadopublico_tender_all_companies" model="ir.rule">
+        <field name="name">Licitaciones Mercado Público: todas las compañías</field>
+        <field name="model_id" ref="model_mercadopublico_tender"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_mercadopublico_user'))]"/>
+    </record>
+
+    <!-- Dashboard accesible a todos los usuarios del módulo -->
+    <record id="rule_mercadopublico_dashboard_company" model="ir.rule">
+        <field name="name">Dashboard Mercado Público: acceso global</field>
+        <field name="model_id" ref="model_mercadopublico_dashboard"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_mercadopublico_user'))]"/>
+    </record>
+</odoo>

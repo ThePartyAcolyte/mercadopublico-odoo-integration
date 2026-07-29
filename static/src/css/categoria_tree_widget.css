@@ -1,0 +1,44 @@
+.o_categoria_tree_widget {
+    width: 100%;
+}
+
+.o_categoria_tree_container {
+    /* Se elimina el background hardcodeado para que herede el tema oscuro/claro nativo de Odoo */
+}
+
+.o_categoria_tree_list {
+    margin: 0;
+    padding: 0;
+}
+
+.o_categoria_tree_item {
+    margin-bottom: 2px;
+}
+
+.o_categoria_tree_toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted, #6c757d);
+}
+
+.o_categoria_tree_toggle:hover {
+    color: var(--o-brand-primary, #017e84);
+}
+
+.o_categoria_tree_item .form-check-label {
+    user-select: none;
+    font-size: 0.95em;
+    color: var(--body-color); /* Heredar el color de texto del tema actual */
+}
+
+.o_categoria_tree_item .form-check-label:hover {
+    color: var(--o-brand-primary, #017e84);
+}
+
+.o_categoria_tree_item .badge {
+    font-weight: 500;
+    font-size: 0.85em;
+    background-color: var(--bg-surface-secondary);
+    color: var(--body-color);
+}

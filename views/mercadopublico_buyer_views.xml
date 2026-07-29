@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- List View -->
+        <record id="view_mercadopublico_buyer_list" model="ir.ui.view">
+            <field name="name">mercadopublico.buyer.list</field>
+            <field name="model">mercadopublico.buyer</field>
+            <field name="arch" type="xml">
+                <list string="Organismos Públicos">
+                    <field name="name"/>
+                    <field name="codigo"/>
+                    <field name="is_favorite" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_mercadopublico_buyer_form" model="ir.ui.view">
+            <field name="name">mercadopublico.buyer.form</field>
+            <field name="model">mercadopublico.buyer</field>
+            <field name="arch" type="xml">
+                <form string="Organismo Público">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Nombre del Organismo"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="codigo"/>
+                            </group>
+                            <group>
+                                <field name="is_favorite" widget="boolean_toggle"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record id="view_mercadopublico_buyer_search" model="ir.ui.view">
+            <field name="name">mercadopublico.buyer.search</field>
+            <field name="model">mercadopublico.buyer</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Organismos">
+                    <field name="name" string="Nombre"/>
+                    <field name="codigo" string="Código"/>
+                    <separator/>
+                    <filter string="Favoritos" name="favoritos" domain="[('is_favorite', '=', True)]"/>
+                    <filter string="Archivados" name="inactive" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

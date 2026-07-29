@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Bot channel -->
+        <record id="channel_mercadopublico" model="discuss.channel">
+            <field name="name">Licitaciones de Mercado Público</field>
+            <field name="description">Canal para notificaciones de nuevas licitaciones de Mercado Público.</field>
+            <field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
+            <field name="channel_type">channel</field>
+            <field name="avatar_128" type="base64" file="mercadopublico_odoo_integration/static/description/icon.png"/>
+        </record>
+
+        <!-- Asignar el canal a la compañía principal por defecto -->
+        <record id="base.main_company" model="res.company">
+            <field name="mercadopublico_discuss_channel_id" ref="mercadopublico_odoo_integration.channel_mercadopublico"/>
+        </record>
+    </data>
+</odoo>

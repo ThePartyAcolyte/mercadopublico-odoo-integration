@@ -1,0 +1,1810 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <record id="region_arica_y_parinacota" model="mercadopublico.location">
+            <field name="name">Arica y Parinacota</field>
+            <field name="codigo_region_api">15</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_arica_arica_y_parinacota" model="mercadopublico.location">
+            <field name="name">Arica</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_arica_y_parinacota" />
+        </record>
+        <record id="comuna_camarones_arica_y_parinacota" model="mercadopublico.location">
+            <field name="name">Camarones</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_arica_y_parinacota" />
+        </record>
+        <record id="comuna_putre_arica_y_parinacota" model="mercadopublico.location">
+            <field name="name">Putre</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_arica_y_parinacota" />
+        </record>
+        <record id="comuna_general_lagos_arica_y_parinacota" model="mercadopublico.location">
+            <field name="name">General Lagos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_arica_y_parinacota" />
+        </record>
+        <record id="region_tarapaca" model="mercadopublico.location">
+            <field name="name">Tarapacá</field>
+            <field name="codigo_region_api">1</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_iquique_tarapaca" model="mercadopublico.location">
+            <field name="name">Iquique</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_tarapaca" />
+        </record>
+        <record id="comuna_alto_hospicio_tarapaca" model="mercadopublico.location">
+            <field name="name">Alto Hospicio</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_tarapaca" />
+        </record>
+        <record id="comuna_pozo_almonte_tarapaca" model="mercadopublico.location">
+            <field name="name">Pozo Almonte</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_tarapaca" />
+        </record>
+        <record id="comuna_camina_tarapaca" model="mercadopublico.location">
+            <field name="name">Camiña</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_tarapaca" />
+        </record>
+        <record id="comuna_colchane_tarapaca" model="mercadopublico.location">
+            <field name="name">Colchane</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_tarapaca" />
+        </record>
+        <record id="comuna_huara_tarapaca" model="mercadopublico.location">
+            <field name="name">Huara</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_tarapaca" />
+        </record>
+        <record id="comuna_pica_tarapaca" model="mercadopublico.location">
+            <field name="name">Pica</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_tarapaca" />
+        </record>
+        <record id="region_antofagasta" model="mercadopublico.location">
+            <field name="name">Antofagasta</field>
+            <field name="codigo_region_api">2</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_antofagasta_antofagasta" model="mercadopublico.location">
+            <field name="name">Antofagasta</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_mejillones_antofagasta" model="mercadopublico.location">
+            <field name="name">Mejillones</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_sierra_gorda_antofagasta" model="mercadopublico.location">
+            <field name="name">Sierra Gorda</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_taltal_antofagasta" model="mercadopublico.location">
+            <field name="name">Taltal</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_calama_antofagasta" model="mercadopublico.location">
+            <field name="name">Calama</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_ollage_antofagasta" model="mercadopublico.location">
+            <field name="name">Ollagüe</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_san_pedro_de_atacama_antofagasta" model="mercadopublico.location">
+            <field name="name">San Pedro de Atacama</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_tocopilla_antofagasta" model="mercadopublico.location">
+            <field name="name">Tocopilla</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="comuna_maria_elena_antofagasta" model="mercadopublico.location">
+            <field name="name">María Elena</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_antofagasta" />
+        </record>
+        <record id="region_atacama" model="mercadopublico.location">
+            <field name="name">Atacama</field>
+            <field name="codigo_region_api">3</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_copiapo_atacama" model="mercadopublico.location">
+            <field name="name">Copiapó</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_caldera_atacama" model="mercadopublico.location">
+            <field name="name">Caldera</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_tierra_amarilla_atacama" model="mercadopublico.location">
+            <field name="name">Tierra Amarilla</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_chanaral_atacama" model="mercadopublico.location">
+            <field name="name">Chañaral</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_diego_de_almagro_atacama" model="mercadopublico.location">
+            <field name="name">Diego de Almagro</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_vallenar_atacama" model="mercadopublico.location">
+            <field name="name">Vallenar</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_alto_del_carmen_atacama" model="mercadopublico.location">
+            <field name="name">Alto del Carmen</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_freirina_atacama" model="mercadopublico.location">
+            <field name="name">Freirina</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="comuna_huasco_atacama" model="mercadopublico.location">
+            <field name="name">Huasco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_atacama" />
+        </record>
+        <record id="region_coquimbo" model="mercadopublico.location">
+            <field name="name">Coquimbo</field>
+            <field name="codigo_region_api">4</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_la_serena_coquimbo" model="mercadopublico.location">
+            <field name="name">La Serena</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_coquimbo_coquimbo" model="mercadopublico.location">
+            <field name="name">Coquimbo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_andacollo_coquimbo" model="mercadopublico.location">
+            <field name="name">Andacollo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_la_higuera_coquimbo" model="mercadopublico.location">
+            <field name="name">La Higuera</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_paihuano_coquimbo" model="mercadopublico.location">
+            <field name="name">Paihuano</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_vicuna_coquimbo" model="mercadopublico.location">
+            <field name="name">Vicuña</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_illapel_coquimbo" model="mercadopublico.location">
+            <field name="name">Illapel</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_canela_coquimbo" model="mercadopublico.location">
+            <field name="name">Canela</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_los_vilos_coquimbo" model="mercadopublico.location">
+            <field name="name">Los Vilos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_salamanca_coquimbo" model="mercadopublico.location">
+            <field name="name">Salamanca</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_ovalle_coquimbo" model="mercadopublico.location">
+            <field name="name">Ovalle</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_combarbala_coquimbo" model="mercadopublico.location">
+            <field name="name">Combarbalá</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_monte_patria_coquimbo" model="mercadopublico.location">
+            <field name="name">Monte Patria</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_punitaqui_coquimbo" model="mercadopublico.location">
+            <field name="name">Punitaqui</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="comuna_rio_hurtado_coquimbo" model="mercadopublico.location">
+            <field name="name">Río Hurtado</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_coquimbo" />
+        </record>
+        <record id="region_valparaiso" model="mercadopublico.location">
+            <field name="name">Valparaíso</field>
+            <field name="codigo_region_api">5</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_valparaiso_valparaiso" model="mercadopublico.location">
+            <field name="name">Valparaíso</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_casablanca_valparaiso" model="mercadopublico.location">
+            <field name="name">Casablanca</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_concon_valparaiso" model="mercadopublico.location">
+            <field name="name">Concón</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_juan_fernandez_valparaiso" model="mercadopublico.location">
+            <field name="name">Juan Fernández</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_puchuncavi_valparaiso" model="mercadopublico.location">
+            <field name="name">Puchuncaví</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_quintero_valparaiso" model="mercadopublico.location">
+            <field name="name">Quintero</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_vina_del_mar_valparaiso" model="mercadopublico.location">
+            <field name="name">Viña del Mar</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_isla_de_pascua_valparaiso" model="mercadopublico.location">
+            <field name="name">Isla de Pascua</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_los_andes_valparaiso" model="mercadopublico.location">
+            <field name="name">Los Andes</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_calle_larga_valparaiso" model="mercadopublico.location">
+            <field name="name">Calle Larga</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_rinconada_valparaiso" model="mercadopublico.location">
+            <field name="name">Rinconada</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_san_esteban_valparaiso" model="mercadopublico.location">
+            <field name="name">San Esteban</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_la_ligua_valparaiso" model="mercadopublico.location">
+            <field name="name">La Ligua</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_cabildo_valparaiso" model="mercadopublico.location">
+            <field name="name">Cabildo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_papudo_valparaiso" model="mercadopublico.location">
+            <field name="name">Papudo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_petorca_valparaiso" model="mercadopublico.location">
+            <field name="name">Petorca</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_zapallar_valparaiso" model="mercadopublico.location">
+            <field name="name">Zapallar</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_quillota_valparaiso" model="mercadopublico.location">
+            <field name="name">Quillota</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_calera_valparaiso" model="mercadopublico.location">
+            <field name="name">Calera</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_hijuelas_valparaiso" model="mercadopublico.location">
+            <field name="name">Hijuelas</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_la_cruz_valparaiso" model="mercadopublico.location">
+            <field name="name">La Cruz</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_nogales_valparaiso" model="mercadopublico.location">
+            <field name="name">Nogales</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_san_antonio_valparaiso" model="mercadopublico.location">
+            <field name="name">San Antonio</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_algarrobo_valparaiso" model="mercadopublico.location">
+            <field name="name">Algarrobo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_cartagena_valparaiso" model="mercadopublico.location">
+            <field name="name">Cartagena</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_el_quisco_valparaiso" model="mercadopublico.location">
+            <field name="name">El Quisco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_el_tabo_valparaiso" model="mercadopublico.location">
+            <field name="name">El Tabo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_santo_domingo_valparaiso" model="mercadopublico.location">
+            <field name="name">Santo Domingo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_san_felipe_valparaiso" model="mercadopublico.location">
+            <field name="name">San Felipe</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_catemu_valparaiso" model="mercadopublico.location">
+            <field name="name">Catemu</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_llaillay_valparaiso" model="mercadopublico.location">
+            <field name="name">Llaillay</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_panquehue_valparaiso" model="mercadopublico.location">
+            <field name="name">Panquehue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_putaendo_valparaiso" model="mercadopublico.location">
+            <field name="name">Putaendo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_santa_maria_valparaiso" model="mercadopublico.location">
+            <field name="name">Santa María</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_quilpue_valparaiso" model="mercadopublico.location">
+            <field name="name">Quilpué</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_limache_valparaiso" model="mercadopublico.location">
+            <field name="name">Limache</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_olmue_valparaiso" model="mercadopublico.location">
+            <field name="name">Olmué</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="comuna_villa_alemana_valparaiso" model="mercadopublico.location">
+            <field name="name">Villa Alemana</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_valparaiso" />
+        </record>
+        <record id="region_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Metropolitana de Santiago</field>
+            <field name="codigo_region_api">13</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_cerrillos_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Cerrillos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_cerro_navia_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Cerro Navia</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_conchali_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Conchalí</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_el_bosque_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">El Bosque</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_estacion_central_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Estación Central</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_huechuraba_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Huechuraba</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_independencia_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Independencia</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_la_cisterna_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">La Cisterna</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_la_florida_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">La Florida</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_la_granja_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">La Granja</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_la_pintana_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">La Pintana</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_la_reina_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">La Reina</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_las_condes_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Las Condes</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_lo_barnechea_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Lo Barnechea</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_lo_espejo_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Lo Espejo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_lo_prado_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Lo Prado</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_macul_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Macul</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_maipu_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Maipú</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_nunoa_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Ñuñoa</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_pedro_aguirre_cerda_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Pedro Aguirre Cerda</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_penalolen_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Peñalolén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_providencia_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Providencia</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_pudahuel_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Pudahuel</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_quilicura_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Quilicura</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_quinta_normal_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Quinta Normal</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_recoleta_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Recoleta</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_renca_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Renca</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_san_joaquin_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">San Joaquín</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_san_miguel_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">San Miguel</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_san_ramon_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">San Ramón</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_santiago_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Santiago</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_vitacura_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Vitacura</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_puente_alto_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Puente Alto</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_pirque_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Pirque</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_san_jose_de_maipo_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">San José de Maipo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_colina_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Colina</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_lampa_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Lampa</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_tiltil_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Tiltil</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_san_bernardo_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">San Bernardo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_buin_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Buin</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_calera_de_tango_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Calera de Tango</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_paine_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Paine</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_melipilla_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Melipilla</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_alhue_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Alhué</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_curacavi_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Curacaví</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_maria_pinto_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">María Pinto</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_san_pedro_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">San Pedro</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_talagante_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Talagante</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_el_monte_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">El Monte</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_isla_de_maipo_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Isla de Maipo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_padre_hurtado_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Padre Hurtado</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="comuna_penaflor_metropolitana_de_santiago" model="mercadopublico.location">
+            <field name="name">Peñaflor</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_metropolitana_de_santiago" />
+        </record>
+        <record id="region_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Libertador General Bernardo O'Higgins</field>
+            <field name="codigo_region_api">6</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_rancagua_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Rancagua</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_codegua_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Codegua</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_coinco_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Coinco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_coltauco_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Coltauco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_donihue_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Doñihue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_graneros_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Graneros</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_las_cabras_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Las Cabras</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_machali_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Machalí</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_malloa_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Malloa</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_mostazal_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Mostazal</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_olivar_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Olivar</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_peumo_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Peumo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_pichidegua_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Pichidegua</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_quinta_de_tilcoco_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Quinta de Tilcoco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_rengo_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Rengo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_requinoa_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Requínoa</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_san_vicente_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">San Vicente</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_pichilemu_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Pichilemu</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_la_estrella_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">La Estrella</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_litueche_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Litueche</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_marchihue_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Marchihue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_navidad_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Navidad</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_paredones_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Paredones</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_san_fernando_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">San Fernando</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_chepica_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Chépica</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_chimbarongo_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Chimbarongo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_lolol_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Lolol</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_nancagua_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Nancagua</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_palmilla_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Palmilla</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_peralillo_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Peralillo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_placilla_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Placilla</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_pumanque_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Pumanque</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="comuna_santa_cruz_libertador_general_bernardo_ohiggins" model="mercadopublico.location">
+            <field name="name">Santa Cruz</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_libertador_general_bernardo_ohiggins" />
+        </record>
+        <record id="region_maule" model="mercadopublico.location">
+            <field name="name">Maule</field>
+            <field name="codigo_region_api">7</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_talca_maule" model="mercadopublico.location">
+            <field name="name">Talca</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_constitucion_maule" model="mercadopublico.location">
+            <field name="name">Constitución</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_curepto_maule" model="mercadopublico.location">
+            <field name="name">Curepto</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_empedrado_maule" model="mercadopublico.location">
+            <field name="name">Empedrado</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_maule_maule" model="mercadopublico.location">
+            <field name="name">Maule</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_pelarco_maule" model="mercadopublico.location">
+            <field name="name">Pelarco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_pencahue_maule" model="mercadopublico.location">
+            <field name="name">Pencahue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_rio_claro_maule" model="mercadopublico.location">
+            <field name="name">Río Claro</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_san_clemente_maule" model="mercadopublico.location">
+            <field name="name">San Clemente</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_san_rafael_maule" model="mercadopublico.location">
+            <field name="name">San Rafael</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_cauquenes_maule" model="mercadopublico.location">
+            <field name="name">Cauquenes</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_chanco_maule" model="mercadopublico.location">
+            <field name="name">Chanco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_pelluhue_maule" model="mercadopublico.location">
+            <field name="name">Pelluhue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_curico_maule" model="mercadopublico.location">
+            <field name="name">Curicó</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_hualane_maule" model="mercadopublico.location">
+            <field name="name">Hualañé</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_licanten_maule" model="mercadopublico.location">
+            <field name="name">Licantén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_molina_maule" model="mercadopublico.location">
+            <field name="name">Molina</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_rauco_maule" model="mercadopublico.location">
+            <field name="name">Rauco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_romeral_maule" model="mercadopublico.location">
+            <field name="name">Romeral</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_sagrada_familia_maule" model="mercadopublico.location">
+            <field name="name">Sagrada Familia</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_teno_maule" model="mercadopublico.location">
+            <field name="name">Teno</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_vichuquen_maule" model="mercadopublico.location">
+            <field name="name">Vichuquén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_linares_maule" model="mercadopublico.location">
+            <field name="name">Linares</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_colbun_maule" model="mercadopublico.location">
+            <field name="name">Colbún</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_longavi_maule" model="mercadopublico.location">
+            <field name="name">Longaví</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_parral_maule" model="mercadopublico.location">
+            <field name="name">Parral</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_retiro_maule" model="mercadopublico.location">
+            <field name="name">Retiro</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_san_javier_maule" model="mercadopublico.location">
+            <field name="name">San Javier</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_villa_alegre_maule" model="mercadopublico.location">
+            <field name="name">Villa Alegre</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="comuna_yerbas_buenas_maule" model="mercadopublico.location">
+            <field name="name">Yerbas Buenas</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_maule" />
+        </record>
+        <record id="region_nuble" model="mercadopublico.location">
+            <field name="name">Ñuble</field>
+            <field name="codigo_region_api">16</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_chillan_nuble" model="mercadopublico.location">
+            <field name="name">Chillán</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_bulnes_nuble" model="mercadopublico.location">
+            <field name="name">Bulnes</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_cobquecura_nuble" model="mercadopublico.location">
+            <field name="name">Cobquecura</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_coelemu_nuble" model="mercadopublico.location">
+            <field name="name">Coelemu</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_coihueco_nuble" model="mercadopublico.location">
+            <field name="name">Coihueco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_chillan_viejo_nuble" model="mercadopublico.location">
+            <field name="name">Chillán Viejo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_el_carmen_nuble" model="mercadopublico.location">
+            <field name="name">El Carmen</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_ninhue_nuble" model="mercadopublico.location">
+            <field name="name">Ninhue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_niquen_nuble" model="mercadopublico.location">
+            <field name="name">Ñiquén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_pemuco_nuble" model="mercadopublico.location">
+            <field name="name">Pemuco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_pinto_nuble" model="mercadopublico.location">
+            <field name="name">Pinto</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_portezuelo_nuble" model="mercadopublico.location">
+            <field name="name">Portezuelo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_quillon_nuble" model="mercadopublico.location">
+            <field name="name">Quillón</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_quirihue_nuble" model="mercadopublico.location">
+            <field name="name">Quirihue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_ranquil_nuble" model="mercadopublico.location">
+            <field name="name">Ránquil</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_san_carlos_nuble" model="mercadopublico.location">
+            <field name="name">San Carlos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_san_fabian_nuble" model="mercadopublico.location">
+            <field name="name">San Fabián</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_san_ignacio_nuble" model="mercadopublico.location">
+            <field name="name">San Ignacio</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_san_nicolas_nuble" model="mercadopublico.location">
+            <field name="name">San Nicolás</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_treguaco_nuble" model="mercadopublico.location">
+            <field name="name">Treguaco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="comuna_yungay_nuble" model="mercadopublico.location">
+            <field name="name">Yungay</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_nuble" />
+        </record>
+        <record id="region_biobio" model="mercadopublico.location">
+            <field name="name">Biobío</field>
+            <field name="codigo_region_api">8</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_concepcion_biobio" model="mercadopublico.location">
+            <field name="name">Concepción</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_coronel_biobio" model="mercadopublico.location">
+            <field name="name">Coronel</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_chiguayante_biobio" model="mercadopublico.location">
+            <field name="name">Chiguayante</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_florida_biobio" model="mercadopublico.location">
+            <field name="name">Florida</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_hualqui_biobio" model="mercadopublico.location">
+            <field name="name">Hualqui</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_lota_biobio" model="mercadopublico.location">
+            <field name="name">Lota</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_penco_biobio" model="mercadopublico.location">
+            <field name="name">Penco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_san_pedro_de_la_paz_biobio" model="mercadopublico.location">
+            <field name="name">San Pedro de la Paz</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_santa_juana_biobio" model="mercadopublico.location">
+            <field name="name">Santa Juana</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_talcahuano_biobio" model="mercadopublico.location">
+            <field name="name">Talcahuano</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_tome_biobio" model="mercadopublico.location">
+            <field name="name">Tomé</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_hualpen_biobio" model="mercadopublico.location">
+            <field name="name">Hualpén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_lebu_biobio" model="mercadopublico.location">
+            <field name="name">Lebu</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_arauco_biobio" model="mercadopublico.location">
+            <field name="name">Arauco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_canete_biobio" model="mercadopublico.location">
+            <field name="name">Cañete</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_contulmo_biobio" model="mercadopublico.location">
+            <field name="name">Contulmo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_curanilahue_biobio" model="mercadopublico.location">
+            <field name="name">Curanilahue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_los_alamos_biobio" model="mercadopublico.location">
+            <field name="name">Los Álamos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_tirua_biobio" model="mercadopublico.location">
+            <field name="name">Tirúa</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_los_angeles_biobio" model="mercadopublico.location">
+            <field name="name">Los Ángeles</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_antuco_biobio" model="mercadopublico.location">
+            <field name="name">Antuco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_cabrero_biobio" model="mercadopublico.location">
+            <field name="name">Cabrero</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_laja_biobio" model="mercadopublico.location">
+            <field name="name">Laja</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_mulchen_biobio" model="mercadopublico.location">
+            <field name="name">Mulchén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_nacimiento_biobio" model="mercadopublico.location">
+            <field name="name">Nacimiento</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_negrete_biobio" model="mercadopublico.location">
+            <field name="name">Negrete</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_quilaco_biobio" model="mercadopublico.location">
+            <field name="name">Quilaco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_quilleco_biobio" model="mercadopublico.location">
+            <field name="name">Quilleco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_san_rosendo_biobio" model="mercadopublico.location">
+            <field name="name">San Rosendo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_santa_barbara_biobio" model="mercadopublico.location">
+            <field name="name">Santa Bárbara</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_tucapel_biobio" model="mercadopublico.location">
+            <field name="name">Tucapel</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="comuna_alto_biobio_biobio" model="mercadopublico.location">
+            <field name="name">Alto Biobío</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_biobio" />
+        </record>
+        <record id="region_la_araucania" model="mercadopublico.location">
+            <field name="name">La Araucanía</field>
+            <field name="codigo_region_api">9</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_temuco_la_araucania" model="mercadopublico.location">
+            <field name="name">Temuco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_carahue_la_araucania" model="mercadopublico.location">
+            <field name="name">Carahue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_cunco_la_araucania" model="mercadopublico.location">
+            <field name="name">Cunco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_curarrehue_la_araucania" model="mercadopublico.location">
+            <field name="name">Curarrehue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_freire_la_araucania" model="mercadopublico.location">
+            <field name="name">Freire</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_galvarino_la_araucania" model="mercadopublico.location">
+            <field name="name">Galvarino</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_gorbea_la_araucania" model="mercadopublico.location">
+            <field name="name">Gorbea</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_lautaro_la_araucania" model="mercadopublico.location">
+            <field name="name">Lautaro</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_loncoche_la_araucania" model="mercadopublico.location">
+            <field name="name">Loncoche</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_melipeuco_la_araucania" model="mercadopublico.location">
+            <field name="name">Melipeuco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_nueva_imperial_la_araucania" model="mercadopublico.location">
+            <field name="name">Nueva Imperial</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_padre_las_casas_la_araucania" model="mercadopublico.location">
+            <field name="name">Padre las Casas</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_perquenco_la_araucania" model="mercadopublico.location">
+            <field name="name">Perquenco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_pitrufquen_la_araucania" model="mercadopublico.location">
+            <field name="name">Pitrufquén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_pucon_la_araucania" model="mercadopublico.location">
+            <field name="name">Pucón</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_saavedra_la_araucania" model="mercadopublico.location">
+            <field name="name">Saavedra</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_teodoro_schmidt_la_araucania" model="mercadopublico.location">
+            <field name="name">Teodoro Schmidt</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_tolten_la_araucania" model="mercadopublico.location">
+            <field name="name">Toltén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_vilcun_la_araucania" model="mercadopublico.location">
+            <field name="name">Vilcún</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_villarrica_la_araucania" model="mercadopublico.location">
+            <field name="name">Villarrica</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_cholchol_la_araucania" model="mercadopublico.location">
+            <field name="name">Cholchol</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_angol_la_araucania" model="mercadopublico.location">
+            <field name="name">Angol</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_collipulli_la_araucania" model="mercadopublico.location">
+            <field name="name">Collipulli</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_curacautin_la_araucania" model="mercadopublico.location">
+            <field name="name">Curacautín</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_ercilla_la_araucania" model="mercadopublico.location">
+            <field name="name">Ercilla</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_lonquimay_la_araucania" model="mercadopublico.location">
+            <field name="name">Lonquimay</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_los_sauces_la_araucania" model="mercadopublico.location">
+            <field name="name">Los Sauces</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_lumaco_la_araucania" model="mercadopublico.location">
+            <field name="name">Lumaco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_puren_la_araucania" model="mercadopublico.location">
+            <field name="name">Purén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_renaico_la_araucania" model="mercadopublico.location">
+            <field name="name">Renaico</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_traiguen_la_araucania" model="mercadopublico.location">
+            <field name="name">Traiguén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="comuna_victoria_la_araucania" model="mercadopublico.location">
+            <field name="name">Victoria</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_la_araucania" />
+        </record>
+        <record id="region_los_rios" model="mercadopublico.location">
+            <field name="name">Los Ríos</field>
+            <field name="codigo_region_api">14</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_valdivia_los_rios" model="mercadopublico.location">
+            <field name="name">Valdivia</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_corral_los_rios" model="mercadopublico.location">
+            <field name="name">Corral</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_lanco_los_rios" model="mercadopublico.location">
+            <field name="name">Lanco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_los_lagos_los_rios" model="mercadopublico.location">
+            <field name="name">Los Lagos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_mafil_los_rios" model="mercadopublico.location">
+            <field name="name">Máfil</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_mariquina_los_rios" model="mercadopublico.location">
+            <field name="name">Mariquina</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_paillaco_los_rios" model="mercadopublico.location">
+            <field name="name">Paillaco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_panguipulli_los_rios" model="mercadopublico.location">
+            <field name="name">Panguipulli</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_la_union_los_rios" model="mercadopublico.location">
+            <field name="name">La Unión</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_futrono_los_rios" model="mercadopublico.location">
+            <field name="name">Futrono</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_lago_ranco_los_rios" model="mercadopublico.location">
+            <field name="name">Lago Ranco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="comuna_rio_bueno_los_rios" model="mercadopublico.location">
+            <field name="name">Río Bueno</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_rios" />
+        </record>
+        <record id="region_los_lagos" model="mercadopublico.location">
+            <field name="name">Los Lagos</field>
+            <field name="codigo_region_api">10</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_puerto_montt_los_lagos" model="mercadopublico.location">
+            <field name="name">Puerto Montt</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_calbuco_los_lagos" model="mercadopublico.location">
+            <field name="name">Calbuco</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_cochamo_los_lagos" model="mercadopublico.location">
+            <field name="name">Cochamó</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_fresia_los_lagos" model="mercadopublico.location">
+            <field name="name">Fresia</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_frutillar_los_lagos" model="mercadopublico.location">
+            <field name="name">Frutillar</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_los_muermos_los_lagos" model="mercadopublico.location">
+            <field name="name">Los Muermos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_llanquihue_los_lagos" model="mercadopublico.location">
+            <field name="name">Llanquihue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_maullin_los_lagos" model="mercadopublico.location">
+            <field name="name">Maullín</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_puerto_varas_los_lagos" model="mercadopublico.location">
+            <field name="name">Puerto Varas</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_castro_los_lagos" model="mercadopublico.location">
+            <field name="name">Castro</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_ancud_los_lagos" model="mercadopublico.location">
+            <field name="name">Ancud</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_chonchi_los_lagos" model="mercadopublico.location">
+            <field name="name">Chonchi</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_curaco_de_velez_los_lagos" model="mercadopublico.location">
+            <field name="name">Curaco de Vélez</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_dalcahue_los_lagos" model="mercadopublico.location">
+            <field name="name">Dalcahue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_puqueldon_los_lagos" model="mercadopublico.location">
+            <field name="name">Puqueldón</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_queilen_los_lagos" model="mercadopublico.location">
+            <field name="name">Queilén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_quellon_los_lagos" model="mercadopublico.location">
+            <field name="name">Quellón</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_quemchi_los_lagos" model="mercadopublico.location">
+            <field name="name">Quemchi</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_quinchao_los_lagos" model="mercadopublico.location">
+            <field name="name">Quinchao</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_osorno_los_lagos" model="mercadopublico.location">
+            <field name="name">Osorno</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_puerto_octay_los_lagos" model="mercadopublico.location">
+            <field name="name">Puerto Octay</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_purranque_los_lagos" model="mercadopublico.location">
+            <field name="name">Purranque</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_puyehue_los_lagos" model="mercadopublico.location">
+            <field name="name">Puyehue</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_rio_negro_los_lagos" model="mercadopublico.location">
+            <field name="name">Río Negro</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_san_juan_de_la_costa_los_lagos" model="mercadopublico.location">
+            <field name="name">San Juan de la Costa</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_san_pablo_los_lagos" model="mercadopublico.location">
+            <field name="name">San Pablo</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_chaiten_los_lagos" model="mercadopublico.location">
+            <field name="name">Chaitén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_futaleufu_los_lagos" model="mercadopublico.location">
+            <field name="name">Futaleufú</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_hualaihue_los_lagos" model="mercadopublico.location">
+            <field name="name">Hualaihué</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="comuna_palena_los_lagos" model="mercadopublico.location">
+            <field name="name">Palena</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_los_lagos" />
+        </record>
+        <record id="region_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Aysén del General Carlos Ibáñez del Campo</field>
+            <field name="codigo_region_api">11</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_coyhaique_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Coyhaique</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_lago_verde_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Lago Verde</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_aysen_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Aysén</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_cisnes_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Cisnes</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_guaitecas_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Guaitecas</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_cochrane_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Cochrane</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_ohiggins_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">O'Higgins</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_tortel_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Tortel</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_chile_chico_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Chile Chico</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="comuna_rio_ibanez_aysen_del_general_carlos_ibanez_del_campo" model="mercadopublico.location">
+            <field name="name">Río Ibáñez</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_aysen_del_general_carlos_ibanez_del_campo" />
+        </record>
+        <record id="region_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Magallanes y de la Antártica Chilena</field>
+            <field name="codigo_region_api">12</field>
+            <field name="tipo">region</field>
+        </record>
+        <record id="comuna_punta_arenas_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Punta Arenas</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_laguna_blanca_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Laguna Blanca</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_rio_verde_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Río Verde</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_san_gregorio_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">San Gregorio</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_cabo_de_hornos_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Cabo de Hornos</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_antartica_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Antártica</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_porvenir_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Porvenir</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_primavera_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Primavera</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_timaukel_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Timaukel</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_natales_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Natales</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+        <record id="comuna_torres_del_paine_magallanes_y_de_la_antartica_chilena" model="mercadopublico.location">
+            <field name="name">Torres del Paine</field>
+            <field name="tipo">comuna</field>
+            <field name="parent_id" ref="region_magallanes_y_de_la_antartica_chilena" />
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="etapa_en_espera" model="mercadopublico.stage">
+            <field name="name">En Espera</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <record id="etapa_convertida" model="mercadopublico.stage">
+            <field name="name">Convertida a Oportunidad</field>
+            <field name="sequence">20</field>
+            <field name="fold" eval="True"/>
+        </record>
+        
+        <record id="etapa_descartada" model="mercadopublico.stage">
+            <field name="name">Descartada</field>
+            <field name="sequence">30</field>
+            <field name="fold" eval="True"/>
+        </record>
+    </data>
+</odoo>

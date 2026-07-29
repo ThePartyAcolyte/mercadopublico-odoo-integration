@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_mercadopublico" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.mercadopublico</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Mercado Público" string="Mercado Público" name="mercadopublico_odoo_integration" logo="/mercadopublico_odoo_integration/static/description/icon.png">
+                    <header>
+                        <!-- Install button moved to System Status -->
+                    </header>
+
+                    <h2>Estado del Sistema</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_status_libraries"/>
+                                <div class="text-muted mb-2">
+                                    Librerías de Python requeridas (thefuzz, python-Levenshtein). 
+                                </div>
+                                <field name="mercadopublico_status_libraries" widget="badge" decoration-success="mercadopublico_status_libraries == 'ok'" decoration-danger="mercadopublico_status_libraries == 'missing'"/>
+                                
+                                <div class="mt8" invisible="mercadopublico_status_libraries == 'ok'">
+                                    <p class="text-danger mt-1">
+                                        <i class="fa fa-warning"/> Faltan dependencias. El administrador del sistema debe instalarlas ejecutando:
+                                    </p>
+                                    <code>pip install thefuzz python-Levenshtein</code>
+                                    <p class="text-muted mt-1">En Odoo.sh, agregar <code>thefuzz</code> y <code>python-Levenshtein</code> al archivo <code>requirements.txt</code> del repositorio.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>API General &amp; Credenciales</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_api_ticket"/>
+                                <field name="mercadopublico_api_ticket" password="1"/>
+                                <div class="mt8">
+                                    <button name="action_get_api_key" string="Obtener Ticket" type="object" class="btn-link" icon="fa-external-link"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Consumo de API (Local)</span>
+                                <div class="text-muted">
+                                    Contador estimado de llamadas a la API para evitar bloqueos por cuota (Error 429).
+                                </div>
+                                <div class="mt-2" groups="base.group_no_one">
+                                    <label for="mercadopublico_api_limit" string="Límite Diario" class="mr8"/>
+                                    <field name="mercadopublico_api_limit" class="oe_inline"/>
+                                </div>
+                                <div class="mt-1">
+                                    <label for="mercadopublico_api_realizados" string="Realizados Hoy" class="mr8"/>
+                                    <field name="mercadopublico_api_realizados" class="oe_inline font-weight-bold" decoration-danger="mercadopublico_api_realizados >= mercadopublico_api_limit"/>
+                                    <span class="ml-2 text-muted">(<field name="mercadopublico_api_success" class="oe_inline text-success"/> ✔ | <field name="mercadopublico_api_fail" class="oe_inline text-danger"/> ✖)</span>
+                                </div>
+                                <div class="mt-1" groups="base.group_no_one">
+                                    <label for="mercadopublico_cron_analysis_minutes" string="Frecuencia Análisis (min)" class="mr8"/>
+                                    <field name="mercadopublico_cron_analysis_minutes" class="oe_inline"/>
+                                </div>
+                                <div class="mt-1 text-muted" invisible="not mercadopublico_api_reset">
+                                    <i class="fa fa-refresh" title="Fecha reinicio" aria-label="Fecha reinicio"/> Se reinicia a las: <field name="mercadopublico_api_reset" class="oe_inline"/>
+                                </div>
+                                <div class="mt-2">
+                                    <button name="action_reset_api_quota" string="Reiniciar Cuota" type="object" class="btn btn-sm btn-outline-danger" icon="fa-refresh"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Sincronización Licitaciones Públicas</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="mercadopublico_sync_tenders"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_sync_tenders"/>
+                                <div class="text-muted">
+                                    Descargar licitaciones públicas de la API oficial.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_search_days_backward"/>
+                                <div class="text-muted">
+                                    Días de búsqueda hacia atrás al sincronizar la API v1.
+                                </div>
+                                <field name="mercadopublico_search_days_backward" class="mt-2"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_cron_hour"/>
+                                <div class="text-muted">
+                                    Hora (local) a la que se descargarán licitaciones diariamente.
+                                </div>
+                                <field name="mercadopublico_cron_hour" widget="float_time" class="mt-2"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Sincronización Compras Ágiles</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="mercadopublico_sync_quick_buys"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_sync_quick_buys"/>
+                                <div class="text-muted">
+                                    Descargar procesos de Compra Ágil.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" groups="base.group_no_one">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_v2_ttl_minutes"/>
+                                <div class="text-muted">
+                                    Ventana de tiempo en minutos para buscar Compras Ágiles recientes (API v2).
+                                </div>
+                                <field name="mercadopublico_v2_ttl_minutes" class="mt-2"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" groups="base.group_no_one">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_status_update_interval_hours"/>
+                                <div class="text-muted">
+                                    Cada cuántas horas se actualizará el estado de las compras ágiles en seguimiento.
+                                </div>
+                                <field name="mercadopublico_status_update_interval_hours" class="mt-2"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2>Filtros Avanzados y Puntuación</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_keyword_organismo_favorito"/>
+                                <div class="text-muted">
+                                    Define cómo se tratan los organismos marcados con estrella.
+                                </div>
+                                <field name="mercadopublico_keyword_organismo_favorito" widget="radio" class="mt-2"/>
+                                <div class="mt-3" invisible="mercadopublico_keyword_organismo_favorito != 'excluyente'">
+                                    <field name="mercadopublico_strict_buyer_mode"/>
+                                    <label for="mercadopublico_strict_buyer_mode"/>
+                                    <div class="text-muted">
+                                        Si está activo, descarta en memoria desde la cabecera los registros que no pertenezcan a favoritos.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_location_mode"/>
+                                <div class="text-muted">
+                                    Regla global para el filtrado por ubicaciones.
+                                </div>
+                                <field name="mercadopublico_location_mode" widget="radio" class="mt-2"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="mercadopublico_auto_import_tags"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_auto_import_tags"/>
+                                <div class="text-muted">
+                                    Cada vez que se cree un nuevo tag de producto en Odoo, se importará automáticamente como palabra clave de búsqueda.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Integración con CRM</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_crm_team_id"/>
+                                <div class="text-muted">
+                                    Equipo al que se asignarán las licitaciones convertidas en oportunidad.
+                                </div>
+                                <field name="mercadopublico_crm_team_id"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_crm_user_id"/>
+                                <div class="text-muted">
+                                    Vendedor responsable por defecto de las nuevas oportunidades.
+                                </div>
+                                <field name="mercadopublico_crm_user_id"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Notificaciones y Mantenimiento</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_discuss_channel_id"/>
+                                <div class="text-muted">
+                                    Canal de Discuss donde se publicarán las licitaciones aptas detectadas.
+                                </div>
+                                <field name="mercadopublico_discuss_channel_id"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="mercadopublico_retention_days_rejected"/>
+                                <div class="text-muted">
+                                    Días de retención para licitaciones no aptas antes de ser eliminadas.
+                                </div>
+                                <field name="mercadopublico_retention_days_rejected"/>
+                            </div>
+                        </div>
+                    </div>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_mercadopublico_config_settings" model="ir.actions.act_window">
+        <field name="name">Ajustes</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{'module' : 'mercadopublico_odoo_integration', 'bin_size': False}</field>
+    </record>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_mercadopublico_category_tree" model="ir.ui.view">
+        <field name="name">mercadopublico.category.list</field>
+        <field name="model">mercadopublico.category</field>
+        <field name="arch" type="xml">
+            <list string="Categorías UNSPSC">
+                <field name="codigo"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mercadopublico_category_form" model="ir.ui.view">
+        <field name="name">mercadopublico.category.form</field>
+        <field name="model">mercadopublico.category</field>
+        <field name="arch" type="xml">
+            <form string="Categoría UNSPSC">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="codigo" placeholder="Código (ej: 43210000)"/>
+                        </h1>
+                        <h2>
+                            <field name="name" placeholder="Nombre de Categoría"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="parent_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Subcategorías">
+                            <field name="child_ids">
+                                <list>
+                                    <field name="codigo"/>
+                                    <field name="name"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mercadopublico_category_search" model="ir.ui.view">
+        <field name="name">mercadopublico.category.search</field>
+        <field name="model">mercadopublico.category</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Categorías">
+                <field name="codigo" string="Código o Nombre" filter_domain="['|', ('codigo', 'ilike', self), ('name', 'ilike', self)]"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <separator/>
+                <filter string="Categorías Principales (Raíz / Segmentos)" name="filter_root" domain="[('parent_id', '=', False)]"/>
+                <filter string="Subcategorías (Con Padre)" name="filter_subcategorias" domain="[('parent_id', '!=', False)]"/>
+                <group name="group_by">
+                    <filter string="Categoría Padre" name="group_by_parent" context="{'group_by': 'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

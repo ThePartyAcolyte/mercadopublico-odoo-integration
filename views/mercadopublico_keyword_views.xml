@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mercadopublico_keyword_view_list" model="ir.ui.view">
+        <field name="name">mercadopublico.keyword.list</field>
+        <field name="model">mercadopublico.keyword</field>
+        <field name="arch" type="xml">
+            <list string="Filtros de Búsqueda" editable="bottom">
+                <field name="keyword" string="Palabra Clave"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para filtros -->
+    <record id="mercadopublico_keyword_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.keyword.form</field>
+        <field name="model">mercadopublico.keyword</field>
+        <field name="arch" type="xml">
+            <form string="Palabra Clave">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="keyword" class="oe_edit_only" string="Palabra Clave"/>
+                        <h1>
+                            <field name="keyword" placeholder="Ej: electric*"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de búsqueda para filtros -->
+    <record id="mercadopublico_keyword_view_search" model="ir.ui.view">
+        <field name="name">mercadopublico.keyword.search</field>
+        <field name="model">mercadopublico.keyword</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Palabras Clave">
+                <field name="keyword" string="Palabra Clave"/>
+                <separator/>
+                <filter string="Activos" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactivos" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+</odoo>

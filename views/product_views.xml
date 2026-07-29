@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Producto: Categorías UNSPSC -->
+    <record id="product_template_form_view_mercadopublico" model="ir.ui.view">
+        <field name="name">product.template.form.mercadopublico</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']" position="inside">
+                <group string="Mercado Público (ChileCompra)">
+                    <label for="todas_mercadopublico_category_ids"/>
+                    <div class="o_row">
+                        <field name="todas_mercadopublico_category_ids" widget="many2many_tags" readonly="1"/>
+                        <button name="%(mercadopublico_odoo_integration.action_mercadopublico_category_wizard)d" type="action" 
+                                string="Editar Categorías UNSPSC" class="btn-link" icon="fa-pencil"/>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Vista Categoría Interna: Categorías UNSPSC -->
+    <record id="product_category_form_view_mercadopublico" model="ir.ui.view">
+        <field name="name">product.category.form.mercadopublico</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='first']" position="after">
+                <group string="Mercado Público (ChileCompra)">
+                    <label for="mercadopublico_category_ids"/>
+                    <div class="o_row">
+                        <field name="mercadopublico_category_ids" widget="many2many_tags" readonly="1"/>
+                        <button name="%(mercadopublico_odoo_integration.action_mercadopublico_category_wizard)d" type="action" 
+                                string="Editar Categorías UNSPSC" class="btn-link" icon="fa-pencil"/>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

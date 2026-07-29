@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mercadopublico_onboarding_wizard_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.onboarding.wizard.form</field>
+        <field name="model">mercadopublico.onboarding.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Bienvenido a Mercado Público Integration">
+                <div class="oe_title">
+                    <h1 class="text-primary">Configuración Inicial</h1>
+                </div>
+                
+                <sheet>
+                    <field name="status_libraries" invisible="1"/>
+                    
+                    <group string="Requisitos Previos" invisible="status_libraries == 'ok'">
+                        <div class="alert alert-warning w-100 mb-2" role="status" colspan="2">
+                            <p><strong>Faltan dependencias del sistema:</strong> El filtrado por palabras clave está deshabilitado. Se usarán únicamente las categorías UNSPSC.</p>
+                            <p>El administrador del sistema debe instalar las dependencias ejecutando:</p>
+                            <code>pip install thefuzz python-Levenshtein</code>
+                            <p class="mt-1">En Odoo.sh, agregar <code>thefuzz</code> y <code>python-Levenshtein</code> al archivo <code>requirements.txt</code> del repositorio.</p>
+                        </div>
+                    </group>
+
+                    <group string="1. Conexión con ChileCompra">
+                        <div class="alert alert-info w-100 mb-2" role="status" colspan="2">
+                            Para acceder a las licitaciones y compras ágiles, necesitas un Ticket de la API oficial de ChileCompra.
+                            <br/>
+                            <a href="https://www.chilecompra.cl/api/" target="_blank" class="alert-link">
+                                <i class="fa fa-external-link"/> Haz clic aquí para obtener tu ticket gratuitamente.
+                            </a>
+                        </div>
+                        <field name="api_ticket" placeholder="Pega tu ticket aquí (ej: A1B2C3D4-E5F6...)"/>
+                    </group>
+                    
+                    <group string="2. ¿Qué oportunidades desea recibir?">
+                        <field name="sincronizar_licitaciones"/>
+                        <field name="sincronizar_compra_agil"/>
+                    </group>
+
+                    <group string="3. Palabras Clave de su Negocio">
+                        <div class="alert alert-secondary w-100 mb-2" role="status" colspan="2">
+                            Ingresa las palabras clave que definen qué licitaciones te interesan (escribe y presiona Enter para crear etiquetas).
+                        </div>
+                        <field name="mercadopublico_keyword_ids" widget="many2many_tags" options="{'no_quick_create': False, 'no_create_edit': True}" placeholder="Ej: computadores, licencias (Enter)" readonly="status_libraries == 'missing'"/>
+                    </group>
+
+                    <group string="3b. Importar Tags de Productos como Palabras Clave">
+                        <div class="alert alert-info w-100 mb-2" role="status" colspan="2">
+                            Selecciona los tags de producto existentes que deseas usar como palabras clave de búsqueda. Solo los seleccionados se importarán — puedes editarlos individualmente después en Configuración → Filtros de Búsqueda.
+                        </div>
+                        <field name="import_tag_ids" widget="many2many_tags" options="{'no_create': True}" placeholder="Buscar tags de producto..."/>
+                    </group>
+
+                    <group string="4. Categorías UNSPSC (Rubros Comerciales)">
+                        <field name="mercadopublico_category_ids" widget="categoria_tree" placeholder="Escribe para buscar categorías..."/>
+                    </group>
+                    
+                    <group string="5. Integración con CRM">
+                        <field name="crm_team_id"/>
+                        <field name="crm_user_id"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_finish_onboarding" string="Guardar y Comenzar" type="object" class="btn-primary" icon="fa-rocket"/>
+                    <button string="Saltar por ahora" class="btn-secondary" special="cancel"/>
+                    
+                    <div class="ms-auto" style="margin-top: 8px;">
+                        <a href="https://kirulab.tech/productos/mercadopublico" target="_blank" class="oe_link text-muted">
+                            <i class="fa fa-question-circle"/> Ayuda y Soporte KiruLab
+                        </a>
+                    </div>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción del Servidor para enrutar el dashboard -->
+    <record id="action_mercadopublico_dashboard_router" model="ir.actions.server">
+        <field name="name">Router Dashboard Mercado Público</field>
+        <field name="model_id" ref="model_mercadopublico_dashboard"/>
+        <field name="state">code</field>
+        <field name="code">
+company = env.company
+filtros = env['mercadopublico.keyword'].search_count([])
+# Si el ticket es el default o no hay filtros, mostrar onboarding
+if not company.mercadopublico_api_ticket and filtros == 0:
+    action = {
+        'name': 'Onboarding Mercado Público',
+        'type': 'ir.actions.act_window',
+        'res_model': 'mercadopublico.onboarding.wizard',
+        'view_mode': 'form',
+        'target': 'new',
+    }
+else:
+    dashboard = env['mercadopublico.dashboard'].get_dashboard()
+    action = {
+        'name': 'Dashboard',
+        'type': 'ir.actions.act_window',
+        'res_model': 'mercadopublico.dashboard',
+        'view_mode': 'form',
+        'view_id': env.ref('mercadopublico_odoo_integration.mercadopublico_dashboard_view_form').id,
+        'target': 'current',
+        'res_id': dashboard.id,
+        'id': env.ref('mercadopublico_odoo_integration.action_mercadopublico_dashboard_router').id,
+    }
+        </field>
+    </record>
+</odoo>
