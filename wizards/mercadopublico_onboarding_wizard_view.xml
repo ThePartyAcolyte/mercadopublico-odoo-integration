@@ -65,8 +65,8 @@
                     <button string="Saltar por ahora" class="btn-secondary" special="cancel"/>
                     
                     <div class="ms-auto" style="margin-top: 8px;">
-                        <a href="https://kirulab.tech/productos/mercadopublico" target="_blank" class="oe_link text-muted">
-                            <i class="fa fa-question-circle"/> Ayuda y Soporte KiruLab
+                        <a href="https://github.com/ThePartyAcolyte/mercadopublico-odoo-integration/issues" target="_blank" class="oe_link text-muted">
+                            <i class="fa fa-question-circle"/> Soporte y Documentación
                         </a>
                     </div>
                 </footer>

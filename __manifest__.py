@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Mercado Público Integration',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.0.1',
     'category': 'Sales/CRM',
     'summary': 'Integration with Chile Mercado Público. Public tender discovery and CRM automation for Odoo.',
     'description': """
@@ -66,7 +66,6 @@ Key Features:
         'python': ['thefuzz'],
     },
     'images': [
-        'static/description/banner.png',
         'static/description/icon.png',
     ],
     'installable': True,

@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [19.0.1.0.1] - 2026-08-10
+### Fixed
+- Sanitized KiruLab private references from onboarding wizard.
+- Removed non-existent banner.png reference from manifest.
+- Re-formatted static/description/index.html to include technical details from README.
+
 ## [19.0.1.0.0] - 2026-07-28
 ### Added
 - Initial public release for Odoo 19.0 (Community & Enterprise).

@@ -107,6 +107,95 @@
             </div>
         </div>
     </section>
+
+    <!-- SYSTEM REQUIREMENTS SECTION -->
+    <section class="oe_container mt-5" style="font-family: 'Inter', sans-serif;">
+        <div class="row text-center mb-4">
+            <h2 class="fw-bold" style="color: #00548b;">Requisitos del Sistema y Configuración</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5 mb-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background: white;">
+                    <h4 class="fw-bold mb-3" style="color: #714B67;">Dependencias de Python</h4>
+                    <p class="text-muted">Instale los paquetes requeridos en el entorno virtual de Odoo (<code>venv</code>):</p>
+                    <pre class="bg-light p-3 rounded text-dark"><code>pip install thefuzz requests pytz</code></pre>
+                </div>
+            </div>
+            <div class="col-md-5 mb-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 p-4" style="background: white;">
+                    <h4 class="fw-bold mb-3" style="color: #714B67;">Configuración en odoo.conf</h4>
+                    <p class="text-muted">Para garantizar que las tareas de sincronización masiva se ejecuten adecuadamente, se sugiere:</p>
+                    <pre class="bg-light p-3 rounded text-dark" style="font-size: 0.9rem;"><code>[options]
+max_cron_threads = 2
+limit_time_cpu = 600
+limit_time_real = 1200</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRON JOBS SECTION -->
+    <section class="oe_container mt-5 py-5" style="background-color: #fdfbfb; border-radius: 20px; font-family: 'Inter', sans-serif;">
+        <div class="row px-5">
+            <div class="col-12 text-center mb-4">
+                <h2 class="fw-bold" style="color: #00548b;">Tareas Programadas (Cron Jobs)</h2>
+                <p class="lead text-muted mt-3">El módulo opera automáticamente a través de los siguientes trabajos programados.</p>
+            </div>
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-hover bg-white rounded shadow-sm">
+                        <thead style="background-color: #00548b; color: white;">
+                            <tr>
+                                <th class="p-3">Trabajo Automático</th>
+                                <th class="p-3">Frecuencia</th>
+                                <th class="p-3">Propósito</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-muted">
+                            <tr>
+                                <td class="p-3 fw-bold">Importar Licitaciones (v1 Nocturno)</td>
+                                <td class="p-3">Diaria (23:00)</td>
+                                <td class="p-3">Descarga las licitaciones públicas del día.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 fw-bold">Importar Compras Ágiles (v2)</td>
+                                <td class="p-3">Cada 60 min</td>
+                                <td class="p-3">Consulta la ventana temporal de compras ágiles recientes.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 fw-bold">Analizar Licitaciones Nuevas</td>
+                                <td class="p-3">Cada 2 min</td>
+                                <td class="p-3">Procesa los lotes importados aplicando las reglas de filtrado.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 fw-bold">Actualizar Estado Licitaciones</td>
+                                <td class="p-3">Cada 2 horas</td>
+                                <td class="p-3">Sincroniza cambios de estado en licitaciones vigentes.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 fw-bold">Limpieza Automática</td>
+                                <td class="p-3">Diaria (03:00)</td>
+                                <td class="p-3">Purga registros descartados según el periodo de retención configurado.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPATIBILITY & LICENSE SECTION -->
+    <section class="oe_container mt-5 mb-5 text-center" style="font-family: 'Inter', sans-serif;">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="fw-bold" style="color: #714B67;">Licencia y Compatibilidad</h2>
+                <div class="mt-4">
+                    <span class="badge fs-6 me-2 p-2" style="background-color: #00548b !important; color: white;"><i class="fa fa-server"></i> Odoo 19.0 (Community & Enterprise)</span>
+                    <span class="badge bg-secondary fs-6 p-2"><i class="fa fa-balance-scale"></i> LGPL-3 License</span>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
