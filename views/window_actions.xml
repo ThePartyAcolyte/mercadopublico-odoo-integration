@@ -21,9 +21,9 @@ action = {
     </record>
 
 
-    <record id="action_mercadopublico_licitacion" model="ir.actions.act_window">
+    <record id="action_mercadopublico_tender" model="ir.actions.act_window">
         <field name="name">Licitaciones</field>
-        <field name="res_model">mercadopublico.licitacion</field>
+        <field name="res_model">mercadopublico.tender</field>
         <field name="view_mode">list,form,kanban</field>
         <field name="context">{'search_default_apta': 1}</field>
         <field name="help" type="html">
@@ -39,9 +39,9 @@ action = {
 
 
     <!-- Acción para palabras clave (filtros) -->
-    <record id="action_mercadopublico_filtro" model="ir.actions.act_window">
+    <record id="action_mercadopublico_keyword" model="ir.actions.act_window">
         <field name="name">Palabras Clave</field>
-        <field name="res_model">mercadopublico.filtro</field>
+        <field name="res_model">mercadopublico.keyword</field>
         <field name="view_mode">list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -65,23 +65,24 @@ action = {
 
 
     <!-- Acción para organismos -->
-    <record id="action_mercadopublico_organismo" model="ir.actions.act_window">
+    <record id="action_mercadopublico_buyer" model="ir.actions.act_window">
         <field name="name">Organismos Públicos</field>
-        <field name="res_model">mercadopublico.organismo</field>
+        <field name="res_model">mercadopublico.buyer</field>
         <field name="view_mode">list,form</field>
     </record>
 
     <!-- Acción para categorias -->
-    <record id="action_mercadopublico_categoria" model="ir.actions.act_window">
+    <record id="action_mercadopublico_category" model="ir.actions.act_window">
         <field name="name">Categorías UNSPSC</field>
-        <field name="res_model">mercadopublico.categoria</field>
+        <field name="res_model">mercadopublico.category</field>
         <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_group_by_parent': 1}</field>
     </record>
 
     <!-- Acción para etapas -->
-    <record id="action_mercadopublico_etapa" model="ir.actions.act_window">
+    <record id="action_mercadopublico_stage" model="ir.actions.act_window">
         <field name="name">Etapas Kanban</field>
-        <field name="res_model">mercadopublico.etapa</field>
+        <field name="res_model">mercadopublico.stage</field>
         <field name="view_mode">list,form</field>
     </record>
 

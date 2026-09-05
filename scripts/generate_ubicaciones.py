@@ -29,13 +29,13 @@ def clean_id(text):
 
 for region, comunas in regiones_comunas.items():
     region_id_str = f"region_{clean_id(region)}"
-    record_reg = ET.SubElement(data, 'record', id=region_id_str, model="mercadopublico.ubicacion")
+    record_reg = ET.SubElement(data, 'record', id=region_id_str, model="mercadopublico.location")
     ET.SubElement(record_reg, 'field', name="name").text = region
     ET.SubElement(record_reg, 'field', name="tipo").text = "region"
 
     for comuna in comunas:
         comuna_id_str = f"comuna_{clean_id(comuna)}_{clean_id(region)}"
-        record_com = ET.SubElement(data, 'record', id=comuna_id_str, model="mercadopublico.ubicacion")
+        record_com = ET.SubElement(data, 'record', id=comuna_id_str, model="mercadopublico.location")
         ET.SubElement(record_com, 'field', name="name").text = comuna
         ET.SubElement(record_com, 'field', name="tipo").text = "comuna"
         ET.SubElement(record_com, 'field', name="region_id", ref=region_id_str)

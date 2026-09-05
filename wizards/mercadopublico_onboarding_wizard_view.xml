@@ -13,7 +13,7 @@
                     <field name="status_libraries" invisible="1"/>
                     
                     <group string="Requisitos Previos" invisible="status_libraries == 'ok'">
-                        <div class="alert alert-warning w-100" role="alert">
+                        <div class="alert alert-warning w-100 mb-2" role="status" colspan="2">
                             <p><strong>Faltan dependencias del sistema:</strong> El filtrado por palabras clave está deshabilitado. Se usarán únicamente las categorías UNSPSC.</p>
                             <p>El administrador del sistema debe instalar las dependencias ejecutando:</p>
                             <code>pip install thefuzz python-Levenshtein</code>
@@ -22,7 +22,7 @@
                     </group>
 
                     <group string="1. Conexión con ChileCompra">
-                        <div class="alert alert-info w-100" role="alert">
+                        <div class="alert alert-info w-100 mb-2" role="status" colspan="2">
                             Para acceder a las licitaciones y compras ágiles, necesitas un Ticket de la API oficial de ChileCompra.
                             <br/>
                             <a href="https://www.chilecompra.cl/api/" target="_blank" class="alert-link">
@@ -38,21 +38,21 @@
                     </group>
 
                     <group string="3. Palabras Clave de su Negocio">
-                        <div class="alert alert-secondary w-100" role="alert">
+                        <div class="alert alert-secondary w-100 mb-2" role="status" colspan="2">
                             Ingresa las palabras clave que definen qué licitaciones te interesan (escribe y presiona Enter para crear etiquetas).
                         </div>
-                        <field name="keyword_inclusions" widget="many2many_tags" options="{'no_quick_create': False, 'no_create_edit': True}" placeholder="Ej: computadores, licencias (Enter)" readonly="status_libraries == 'missing'"/>
+                        <field name="mercadopublico_keyword_ids" widget="many2many_tags" options="{'no_quick_create': False, 'no_create_edit': True}" placeholder="Ej: computadores, licencias (Enter)" readonly="status_libraries == 'missing'"/>
                     </group>
 
                     <group string="3b. Importar Tags de Productos como Palabras Clave">
-                        <div class="alert alert-info w-100" role="alert">
+                        <div class="alert alert-info w-100 mb-2" role="status" colspan="2">
                             Selecciona los tags de producto existentes que deseas usar como palabras clave de búsqueda. Solo los seleccionados se importarán — puedes editarlos individualmente después en Configuración → Filtros de Búsqueda.
                         </div>
                         <field name="import_tag_ids" widget="many2many_tags" options="{'no_create': True}" placeholder="Buscar tags de producto..."/>
                     </group>
 
                     <group string="4. Categorías UNSPSC (Rubros Comerciales)">
-                        <field name="categoria_ids" widget="categoria_tree" placeholder="Escribe para buscar categorías..."/>
+                        <field name="mercadopublico_category_ids" widget="categoria_tree" placeholder="Escribe para buscar categorías..."/>
                     </group>
                     
                     <group string="5. Integración con CRM">
@@ -65,8 +65,8 @@
                     <button string="Saltar por ahora" class="btn-secondary" special="cancel"/>
                     
                     <div class="ms-auto" style="margin-top: 8px;">
-                        <a href="https://kirulab.tech/productos/mercadopublico" target="_blank" class="oe_link text-muted">
-                            <i class="fa fa-question-circle"/> Ayuda y Soporte KiruLab
+                        <a href="https://github.com/ThePartyAcolyte/mercadopublico-odoo-integration/issues" target="_blank" class="oe_link text-muted">
+                            <i class="fa fa-question-circle"/> Soporte y Documentación
                         </a>
                     </div>
                 </footer>
@@ -81,7 +81,7 @@
         <field name="state">code</field>
         <field name="code">
 company = env.company
-filtros = env['mercadopublico.filtro'].search_count([])
+filtros = env['mercadopublico.keyword'].search_count([])
 # Si el ticket es el default o no hay filtros, mostrar onboarding
 if not company.mercadopublico_api_ticket and filtros == 0:
     action = {

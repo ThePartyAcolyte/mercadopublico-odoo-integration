@@ -68,7 +68,7 @@ export class CategoriaTreeWidget extends Component {
 
     async loadCategories() {
         const categories = await this.orm.searchRead(
-            "mercadopublico.categoria",
+            "mercadopublico.category",
             [],
             ["id", "name", "codigo", "parent_id"],
             { order: "codigo ASC" }

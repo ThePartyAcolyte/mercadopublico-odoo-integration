@@ -2,9 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.0] - 2026-06-05
+## [19.0.1.0.2] - 2026-08-12
+### Changed
+- Removed unnecessary `sale` and `project` dependencies to reduce installation requirements.
+### Fixed
+- Fixed text color contrast on blue badges in the store description.
+
+## [19.0.1.0.1] - 2026-08-10
+### Fixed
+- Sanitized KiruLab private references from onboarding wizard.
+- Removed non-existent banner.png reference from manifest.
+- Re-formatted static/description/index.html to include technical details from README.
+
+## [19.0.1.0.0] - 2026-07-28
 ### Added
-- Initial release with clean history.
-- Core functionality for fetching and managing public tenders (Mercado Público API).
-- Dashboard and onboarding wizard.
-- Background sync tasks.
+- Initial public release for Odoo 19.0 (Community & Enterprise).
+- Core integration with ChileCompra / Mercado Público API (Licitaciones v1 & Compras Ágiles v2).
+- Precision filtering engine (`thefuzz`, UNSPSC categories, keywords, and Chile regional locations).
+- Native CRM lead & opportunity creation wizard.
+- Onboarding wizard and Discuss channel notification integration.
+- Background sync cron jobs and automatic database cleanup.

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mercadopublico_clear_wizard_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.clear.wizard.form</field>
+        <field name="model">mercadopublico.clear.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Limpieza de Base de Datos">
+                <p>
+                    Este asistente le permite eliminar registros antiguos (Licitaciones y Compras Ágiles) para liberar espacio.
+                </p>
+                <group>
+                    <field name="days"/>
+                    <field name="only_unsuitable"/>
+                    <field name="only_without_opportunity"/>
+                </group>
+                <footer>
+                    <button name="action_clear" string="Limpiar Ahora" type="object" class="btn-danger" icon="fa-trash" confirm="¿Está seguro de que desea eliminar estos registros? Esta acción no se puede deshacer."/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mercadopublico_clear_wizard" model="ir.actions.act_window">
+        <field name="name">Limpiar Base de Datos</field>
+        <field name="res_model">mercadopublico.clear.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

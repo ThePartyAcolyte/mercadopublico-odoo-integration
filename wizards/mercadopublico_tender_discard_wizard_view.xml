@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mercadopublico_tender_discard_wizard_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.tender.discard.wizard.form</field>
+        <field name="model">mercadopublico.tender.discard.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Feedback de Licitación" class="o_mercadopublico_feedback_wizard">
+                <sheet>
+                    <group invisible="1">
+                        <field name="tender_id" invisible="1"/>
+                        <field name="action_type" invisible="1"/>
+                    </group>
+                    
+                    <!-- Sección: Marcar como Apta -->
+                    <div invisible="action_type != 'apta'" class="mb-4">
+                        <div class="alert alert-success d-flex align-items-center mb-3" role="alert">
+                            <i class="fa fa-2x fa-check-circle me-3" title="Confirmación Apta" aria-label="Confirmación Apta"/>
+                            <div>
+                                <h5 class="alert-heading mb-1">Marcar como Apta</h5>
+                                <p class="mb-0">La licitación o compra se marcará como <b>Apta</b> para participar y se moverá a la etapa <b>En Espera</b>.</p>
+                            </div>
+                        </div>
+                        <div class="alert alert-info" role="status" invisible="not category_line_ids">
+                            <h6 class="fw-bold mb-1"><i class="fa fa-lightbulb-o me-2" title="Recomendación" aria-label="Recomendación"/>Recomendación Inteligente</h6>
+                            <p class="mb-0 small">Para mejorar el descubrimiento automático en el futuro, selecciona y añade a tus filtros las categorías oficiales detectadas en este proceso:</p>
+                        </div>
+                    </div>
+
+                    <!-- Sección: Descartar / No Apta -->
+                    <div invisible="action_type != 'no_apta'" class="mb-4">
+                        <div class="alert alert-warning d-flex align-items-center mb-3" role="alert">
+                            <i class="fa fa-2x fa-exclamation-triangle me-3" title="Advertencia Descarte" aria-label="Advertencia Descarte"/>
+                            <div>
+                                <h5 class="alert-heading mb-1">Descartar Licitación / No Apta</h5>
+                                <p class="mb-0">El registro se clasificará como <b>No Apta</b> y se moverá a la etapa <b>Descartada</b>.</p>
+                            </div>
+                        </div>
+                        <group>
+                            <field name="discard_reason_type" required="action_type == 'no_apta'" class="w-100"/>
+                            <field name="additional_comment" placeholder="Ej: No contamos con la boleta de garantía o los plazos requeridos son inaplicables..." class="w-100"/>
+                        </group>
+                    </div>
+
+                    <!-- Tabla de Categorías Detectadas -->
+                    <div invisible="action_type != 'apta' or not category_line_ids">
+                        <h6 class="fw-bold mb-2">Categorías Detectadas</h6>
+                        <field name="category_line_ids" nolabel="1">
+                            <list editable="bottom" create="false" delete="false" no_open="true">
+                                <field name="selected" widget="boolean_toggle" string="Añadir al Filtro"/>
+                                <field name="category_id" readonly="1" force_save="1" string="Categoría UNSPSC"/>
+                            </list>
+                        </field>
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_confirm" string="Confirmar Decisión" type="object" class="btn btn-primary" icon="fa-check" data-hotkey="q"/>
+                    <button string="Cancelar" class="btn btn-secondary" special="cancel" icon="fa-times" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_mercadopublico_tender_feedback_wizard" model="ir.actions.act_window">
+        <field name="name">Feedback de Licitación</field>
+        <field name="res_model">mercadopublico.tender.discard.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

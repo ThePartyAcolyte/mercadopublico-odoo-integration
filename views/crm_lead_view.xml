@@ -17,7 +17,7 @@
             </xpath>
             <!-- Agregar botón para ver licitación -->
             <div name="button_box" position="inside">
-                <button name="action_view_mercadopublico_licitacion" 
+                <button name="action_view_mercadopublico_tender" 
                         type="object" 
                         class="oe_stat_button" 
                         icon="fa-gavel" 
@@ -32,10 +32,10 @@
                         <group>
                             <field name="is_mercadopublico" invisible="1"/>
                             <field name="mercadopublico_id" readonly="1"/>
-                            <field name="mercadopublico_codigo" readonly="1"/>
+                            <field name="mercadopublico_code" readonly="1"/>
                         </group>
                         <group>
-                            <field name="mercadopublico_fecha_cierre" readonly="1"/>
+                            <field name="mercadopublico_closing_date" readonly="1"/>
                         </group>
                     </group>
                 </page>
@@ -51,7 +51,7 @@
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <field name="is_mercadopublico" invisible="1"/>
-                <field name="mercadopublico_codigo" 
+                <field name="mercadopublico_code" 
                        invisible="context.get('search_default_is_mercadopublico', False) != True" 
                        string="Código MP"/>
             </field>

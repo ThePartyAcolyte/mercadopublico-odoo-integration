@@ -150,10 +150,7 @@ cython_debug/
 .idea/
 
 # VS Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/
 
 # Local Odoo Files
 *.log

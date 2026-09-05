@@ -89,8 +89,8 @@
                                 <h5>Herramientas</h5>
                                 <hr />
                                 <div class="d-flex flex-column gap-3 align-items-center mt-3">
-                                    <button name="%(action_mercadopublico_sincronizar_analizar)d" string="Sincronizar y Analizar Ahora" type="action" class="btn btn-primary" icon="fa-cloud-download" />
-                                    <button name="%(action_mercadopublico_limpiar_wizard)d" string="Limpiar Base de Datos" type="action" class="btn btn-outline-danger" icon="fa-trash" />
+                                    <button name="%(action_mercadopublico_sync_and_analyze)d" string="Sincronizar y Analizar Ahora" type="action" class="btn btn-primary" icon="fa-cloud-download" />
+                                    <button name="%(action_mercadopublico_clear_wizard)d" string="Limpiar Base de Datos" type="action" class="btn btn-outline-danger" icon="fa-trash" />
                                 </div>
                             </div>
                         </div>

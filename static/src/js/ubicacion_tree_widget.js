@@ -53,7 +53,7 @@ export class UbicacionTreeWidget extends Component {
 
     async loadCategories() {
         const categories = await this.orm.searchRead(
-            "mercadopublico.ubicacion",
+            "mercadopublico.location",
             [],
             ["id", "name", "tipo", "parent_id"],
             { order: "name ASC" }

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista de lista -->
+    <record id="mercadopublico_tender_view_list" model="ir.ui.view">
+        <field name="name">mercadopublico.tender.list</field>
+        <field name="model">mercadopublico.tender</field>
+        <field name="arch" type="xml">
+            <list string="Procesos" decoration-muted="filter_decision == 'no_apta'" decoration-success="filter_decision == 'apta'">
+                <field name="codigo" string="Código" />
+                <field name="name" string="Nombre" />
+                <field name="rating" widget="priority" optional="show"/>
+                <field name="process_type" string="Tipo" />
+                <field name="buyer_name" string="Organismo" />
+                <field name="fecha_cierre" />
+                <field name="estimated_amount" widget="monetary" />
+                <field name="state" widget="badge"
+                       decoration-info="state == 'nuevo'" 
+                       decoration-warning="state == 'analizando'" 
+                       decoration-success="state == 'analizado'"/>
+                <field name="filter_decision" widget="badge" 
+                       decoration-success="filter_decision == 'apta'" 
+                       decoration-danger="filter_decision == 'no_apta'" 
+                       decoration-muted="filter_decision == 'pendiente'"/>
+                <field name="stage_id" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record id="mercadopublico_tender_view_form" model="ir.ui.view">
+        <field name="name">mercadopublico.tender.form</field>
+        <field name="model">mercadopublico.tender</field>
+        <field name="arch" type="xml">
+            <form string="Proceso Mercado Público">
+                <header>
+                    <button name="action_convert_to_opportunity" 
+                            string="Convertir a Oportunidad" 
+                            type="object" 
+                            class="oe_highlight"
+                            invisible="opportunity_id or filter_decision == 'no_apta'"/>
+                    <button name="action_discard" 
+                            string="Descartar" 
+                            type="object"
+                            invisible="opportunity_id or filter_decision == 'no_apta'"/>
+                    <button name="action_mark_as_suitable" 
+                            string="Es Apta" 
+                            type="object"
+                            class="btn-success"
+                            invisible="opportunity_id or filter_decision == 'apta'"/>
+                    <button name="action_open_mercadopublico" 
+                            string="Ver en Mercado Público" 
+                            type="object" 
+                            icon="fa-external-link"/>
+                    <field name="stage_id" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="float-end">
+                        <field name="rating" widget="priority"/>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        <h3><field name="codigo" readonly="1"/></h3>
+                    </div>
+                    
+                    <group>
+                        <group string="Comprador">
+                            <field name="buyer_name" invisible="1"/>
+                            <label for="buyer_id" string="Organismo"/>
+                            <div class="o_row">
+                                <field name="buyer_id" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="is_favorite_agency" widget="boolean_favorite" nolabel="1"/>
+                            </div>
+                            <field name="buyer_region" readonly="1"/>
+                            <field name="buyer_commune" readonly="1"/>
+                            <field name="fecha_cierre" readonly="1"/>
+                            <field name="estimated_amount" widget="monetary" readonly="1"/>
+                            <field name="tipo_licitacion" invisible="process_type != 'licitacion'" readonly="1"/>
+                        </group>
+                        <group string="Análisis">
+                            <field name="state" readonly="1"/>
+                            <field name="filter_decision" widget="radio" options="{'horizontal': true}"/>
+                            <field name="process_type" readonly="1"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Detalles">
+                            <field name="descripcion" widget="html" readonly="1"/>
+                        </page>
+                        <page string="Productos/Ítems">
+                            <field name="item_ids">
+                                <list string="Ítems" create="false" delete="false" edit="false" decoration-success="is_match == True">
+                                    <field name="is_match" column_invisible="True"/>
+                                    <field name="product_code" optional="show"/>
+                                    <field name="category_code" optional="show"/>
+                                    <field name="name"/>
+                                    <field name="description" optional="show"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_of_measure"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Clasificación">
+                            <group>
+                                <field name="category_ids" widget="many2many_tags"/>
+                                <field name="match_summary" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Seguimiento">
+                            <group>
+                                <field name="opportunity_id" readonly="1"/>
+                                <field name="discard_reason"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de búsqueda -->
+    <record id="mercadopublico_tender_view_search" model="ir.ui.view">
+        <field name="name">mercadopublico.tender.search</field>
+        <field name="model">mercadopublico.tender</field>
+        <field name="arch" type="xml">
+            <search string="Procesos">
+                <field name="name" filter_domain="['|', ('name', 'ilike', self), ('descripcion', 'ilike', self)]"/>
+                <field name="codigo"/>
+                <field name="buyer_name"/>
+                
+                <separator/>
+                <filter string="Aptas" name="apta" domain="[('filter_decision', '=', 'apta')]"/>
+                <filter string="Pendientes" name="pendiente" domain="[('filter_decision', '=', 'pendiente')]"/>
+                <filter string="No Aptas" name="no_apta" domain="[('filter_decision', '=', 'no_apta')]"/>
+                
+                <separator/>
+                <filter string="Nuevas (Sin Analizar)" name="nuevo" domain="[('state', '=', 'nuevo')]"/>
+                
+                <group name="group_by">
+                    <filter string="Etapa" name="group_etapa" context="{'group_by': 'stage_id'}"/>
+                    <filter string="Estado Filtro" name="group_decision" context="{'group_by': 'filter_decision'}"/>
+                    <filter string="Organismo" name="group_comprador" context="{'group_by': 'buyer_name'}"/>
+                    <filter string="Tipo Proceso" name="group_tipo" context="{'group_by': 'process_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Vista Kanban -->
+    <record id="mercadopublico_tender_view_kanban" model="ir.ui.view">
+        <field name="name">mercadopublico.tender.kanban</field>
+        <field name="model">mercadopublico.tender</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id" drag_drop="true" quick_create="false">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="codigo"/>
+                <field name="process_type"/>
+                <field name="estimated_amount"/>
+                <field name="opportunity_id"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div>
+                                    <strong><field name="codigo"/></strong>
+                                    <span class="float-right badge badge-info"><field name="process_type"/></span>
+                                </div>
+                                <div class="mt-1">
+                                    <field name="rating" widget="priority"/>
+                                </div>
+                                <div class="mt-2">
+                                    <field name="name"/>
+                                </div>
+                                <div class="mt-2 text-muted">
+                                    <field name="buyer_name"/>
+                                </div>
+                                <div class="mt-2">
+                                    <field name="estimated_amount" widget="monetary"/>
+                                </div>
+                                <div class="mt-2 d-flex justify-content-end">
+                                    <button t-if="!record.opportunity_id.raw_value" name="action_convert_to_opportunity" type="object" class="btn btn-sm btn-primary">
+                                        Convertir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>
