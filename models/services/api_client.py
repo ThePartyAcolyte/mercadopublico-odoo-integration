@@ -34,6 +34,8 @@ class ChileCompraApiClient:
     """
 
     def __init__(self, api_token: str, quota_callback=None):
+        if not api_token or not isinstance(api_token, str) or not api_token.strip():
+            raise ValueError("api_token must be a non-empty string")
         self._token = api_token
         self._quota_callback = quota_callback
 
