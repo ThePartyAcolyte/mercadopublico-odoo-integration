@@ -16,6 +16,9 @@ _V1_STATUS_MAP: dict[str, str] = {
     "6": "cerrada",
     "7": "desierta",
     "8": "adjudicada",
+    "15": "cancelada",
+    "16": "desierta",
+    "17": "no_adjudicada",
     "18": "revocada",
     "19": "suspendida",
 }
